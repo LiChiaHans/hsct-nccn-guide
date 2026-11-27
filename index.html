@@ -1,0 +1,2281 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>造血幹細胞移植 (HSCT) — NCCN v1.2025 臨床速查手冊</title>
+  <style>
+    :root {
+      --bg: #f1f5fb;
+      --surface: #ffffff;
+      --surface-alt: #f8fafc;
+      --border: #d6e1f0;
+      --text: #0f172a;
+      --text-muted: #475569;
+      --primary: #1d4ed8;
+      --primary-light: #dbeafe;
+      --accent: #0284c7;
+      --danger-bg: #fef2f2;
+      --danger-border: #ef4444;
+      --danger-text: #991b1b;
+      --warn-bg: #fffbeb;
+      --warn-border: #f59e0b;
+      --warn-text: #92400e;
+      --ok-bg: #f0fdf4;
+      --ok-border: #22c55e;
+      --ok-text: #166534;
+      --info-bg: #eff6ff;
+      --info-border: #3b82f6;
+      --info-text: #1e40af;
+      --purple-bg: #f5f3ff;
+      --purple-border: #8b5cf6;
+      --purple-text: #5b21b6;
+      --badge-bg: #e2e8f0;
+      --badge-text: #334155;
+      --shadow: 0 2px 10px rgba(15, 23, 42, 0.06);
+      --radius: 12px;
+      --sidebar-w: 295px;
+      --topbar-h: 64px;
+    }
+
+    [data-theme="dark"] {
+      --bg: #0b1120;
+      --surface: #111827;
+      --surface-alt: #1e293b;
+      --border: #293548;
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --primary: #60a5fa;
+      --primary-light: #1e3a8a;
+      --accent: #38bdf8;
+      --danger-bg: #2c1215;
+      --danger-border: #f87171;
+      --danger-text: #fca5a5;
+      --warn-bg: #2b200a;
+      --warn-border: #fbbf24;
+      --warn-text: #fde68a;
+      --ok-bg: #0b2619;
+      --ok-border: #4ade80;
+      --ok-text: #86efac;
+      --info-bg: #0f213d;
+      --info-border: #60a5fa;
+      --info-text: #93c5fd;
+      --purple-bg: #211638;
+      --purple-border: #a78bfa;
+      --purple-text: #ddd6fe;
+      --badge-bg: #1e293b;
+      --badge-text: #cbd5e1;
+      --shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Noto Sans TC", "Microsoft JhengHei", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 15px;
+    }
+
+    /* Topbar */
+    .topbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--topbar-h);
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0 18px;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+    .menu-btn {
+      display: none;
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--text);
+      border-radius: 8px;
+      padding: 6px 10px;
+      cursor: pointer;
+      font-size: 18px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--primary);
+      white-space: nowrap;
+    }
+    .brand .ver {
+      font-size: 11px;
+      font-weight: 600;
+      background: var(--primary-light);
+      color: var(--primary);
+      padding: 2px 8px;
+      border-radius: 999px;
+    }
+    .portal-link {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      text-decoration: none;
+      border: 1px solid var(--border);
+      padding: 5px 11px;
+      border-radius: 999px;
+      white-space: nowrap;
+      transition: all .15s;
+      font-weight: 500;
+    }
+    .portal-link:hover {
+      color: var(--primary);
+      border-color: var(--primary);
+      background: var(--primary-light);
+    }
+    .who-top-link {
+      font-size: 12.5px;
+      color: var(--primary);
+      text-decoration: none;
+      border: 1px solid var(--primary);
+      background: var(--primary-light);
+      padding: 5px 11px;
+      border-radius: 999px;
+      white-space: nowrap;
+      transition: all .15s;
+      font-weight: 600;
+    }
+    .who-top-link:hover { opacity: 0.88; }
+    .search-wrap {
+      flex: 1;
+      max-width: 360px;
+      margin-left: auto;
+      position: relative;
+    }
+    .search-input {
+      width: 100%;
+      padding: 8px 34px 8px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--surface-alt);
+      color: var(--text);
+      font-size: 14px;
+      outline: none;
+      transition: border-color .2s;
+    }
+    .search-input:focus { border-color: var(--accent); }
+    .search-clear {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      display: none;
+      font-size: 15px;
+    }
+    .search-count {
+      font-size: 12px;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+    .theme-btn {
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      color: var(--text);
+      border-radius: 999px;
+      padding: 6px 12px;
+      cursor: pointer;
+      font-size: 13px;
+      white-space: nowrap;
+      transition: all .15s;
+    }
+    .theme-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    /* Sidebar */
+    .sidebar {
+      position: fixed;
+      top: var(--topbar-h);
+      left: 0;
+      bottom: 0;
+      width: var(--sidebar-w);
+      background: var(--surface);
+      border-right: 1px solid var(--border);
+      overflow-y: auto;
+      padding: 14px 12px 36px;
+      z-index: 90;
+      transition: transform .25s ease;
+    }
+    .sidebar-home-btn {
+      display: none;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 8px;
+      padding: 8px 12px;
+      border-radius: 8px;
+      background: var(--primary-light);
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 13.5px;
+      text-decoration: none;
+      border: 1px solid var(--primary);
+    }
+    .nav-group-title {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      margin: 14px 10px 6px;
+    }
+    .nav-link {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 10px;
+      border-radius: 8px;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 13.5px;
+      margin-bottom: 2px;
+      transition: background .15s, color .15s;
+    }
+    .nav-link:hover, .nav-link.active {
+      background: var(--primary-light);
+      color: var(--primary);
+      font-weight: 600;
+    }
+    .nav-code {
+      font-size: 10px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      background: var(--badge-bg);
+      color: var(--badge-text);
+      padding: 1px 6px;
+      border-radius: 6px;
+      flex-shrink: 0;
+    }
+
+    /* Main */
+    .main {
+      margin-left: var(--sidebar-w);
+      margin-top: var(--topbar-h);
+      padding: 26px 30px 80px;
+      max-width: 1180px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 52%, #0369a1 100%);
+      color: #ffffff;
+      padding: 26px 28px;
+      border-radius: 16px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow);
+    }
+    .hero h1 { margin: 0 0 8px; font-size: 24px; line-height: 1.3; }
+    .hero p { margin: 0; opacity: 0.94; font-size: 14px; }
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+    .hero-pill {
+      background: rgba(255,255,255,0.18);
+      color: #ffffff;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 500;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .hero-pill.link-pill {
+      background: rgba(255,255,255,0.28);
+      border: 1px solid rgba(255,255,255,0.45);
+      font-weight: 600;
+    }
+    .hero-pill.link-pill:hover { background: rgba(255,255,255,0.38); }
+
+    /* Quick Jump Chips */
+    .quick-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 22px;
+    }
+    .chip {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all .15s;
+    }
+    .chip:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      background: var(--primary-light);
+    }
+
+    /* Inline Link Pills */
+    .who-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--primary);
+      background: var(--primary-light);
+      border: 1px solid var(--primary);
+      padding: 2px 9px;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: all .15s;
+      white-space: nowrap;
+    }
+    .who-pill:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+    [data-theme="dark"] .who-pill:hover { color: #0b1120; }
+
+    .nccn-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--ok-text);
+      background: var(--ok-bg);
+      border: 1px solid var(--ok-border);
+      padding: 2px 9px;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: all .15s;
+      white-space: nowrap;
+    }
+    .nccn-pill:hover { opacity: 0.85; }
+
+    /* Sections */
+    section.card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 26px;
+      margin-bottom: 22px;
+      box-shadow: var(--shadow);
+      scroll-margin-top: calc(var(--topbar-h) + 16px);
+    }
+    .sec-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 12px;
+      margin-bottom: 18px;
+    }
+    .sec-header h2 {
+      margin: 0;
+      font-size: 20px;
+      color: var(--primary);
+    }
+    .sec-tags { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+    .code-tag {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 12px;
+      background: var(--primary-light);
+      color: var(--primary);
+      padding: 3px 9px;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+    h3 {
+      font-size: 16px;
+      margin: 20px 0 10px;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    h4 {
+      font-size: 14.5px;
+      margin: 14px 0 6px;
+      color: var(--primary);
+    }
+    p { margin: 8px 0; }
+    ul, ol { margin: 6px 0 12px; padding-left: 22px; }
+    li { margin-bottom: 5px; }
+
+    /* Callouts */
+    .callout {
+      border-left: 4px solid var(--info-border);
+      background: var(--info-bg);
+      color: var(--info-text);
+      padding: 12px 15px;
+      border-radius: 0 10px 10px 0;
+      margin: 14px 0;
+      font-size: 14px;
+    }
+    .callout.danger {
+      border-color: var(--danger-border);
+      background: var(--danger-bg);
+      color: var(--danger-text);
+    }
+    .callout.warn {
+      border-color: var(--warn-border);
+      background: var(--warn-bg);
+      color: var(--warn-text);
+    }
+    .callout.ok {
+      border-color: var(--ok-border);
+      background: var(--ok-bg);
+      color: var(--ok-text);
+    }
+    .callout.purple {
+      border-color: var(--purple-border);
+      background: var(--purple-bg);
+      color: var(--purple-text);
+    }
+    .callout strong { font-weight: 700; }
+
+    /* Badges */
+    .badge {
+      display: inline-block;
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 999px;
+      vertical-align: middle;
+      margin-left: 4px;
+    }
+    .b-cat1 { background: #dcfce7; color: #166534; }
+    .b-cat2b { background: #fef3c7; color: #92400e; }
+    .b-pref { background: #dbeafe; color: #1e40af; }
+    .b-new { background: #f3e8ff; color: #6b21a8; }
+    .b-warn { background: #fee2e2; color: #991b1b; }
+    [data-theme="dark"] .b-cat1 { background: #14532d; color: #86efac; }
+    [data-theme="dark"] .b-cat2b { background: #78350f; color: #fde68a; }
+    [data-theme="dark"] .b-pref { background: #1e3a8a; color: #93c5fd; }
+    [data-theme="dark"] .b-new { background: #4c1d95; color: #ddd6fe; }
+    [data-theme="dark"] .b-warn { background: #7f1d1d; color: #fca5a5; }
+
+    /* Grids */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin: 12px 0;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin: 12px 0;
+    }
+    .box {
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+    }
+    .box h4 { margin-top: 0; }
+
+    /* Tables */
+    .table-wrap {
+      overflow-x: auto;
+      margin: 12px 0;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13.5px;
+    }
+    th, td {
+      padding: 9px 11px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    th {
+      background: var(--surface-alt);
+      font-weight: 700;
+      color: var(--primary);
+      white-space: nowrap;
+    }
+    tr:last-child td { border-bottom: none; }
+    tbody tr:hover { background: var(--surface-alt); }
+
+    /* Tabs */
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+    }
+    .tab-btn {
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 7px 14px;
+      border-radius: 8px;
+      font-size: 13.5px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all .15s;
+    }
+    .tab-btn.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+      font-weight: 600;
+    }
+    [data-theme="dark"] .tab-btn.active { color: #0b1120; }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* Flow steps */
+    .flow-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: stretch;
+      gap: 10px;
+      margin: 12px 0;
+    }
+    .flow-step {
+      flex: 1 1 200px;
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--primary);
+      border-radius: 10px;
+      padding: 12px 14px;
+      font-size: 13.5px;
+    }
+    .flow-step .step-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    /* Interactive Calculators */
+    .calc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 10px;
+      margin: 12px 0 14px;
+    }
+    .calc-field label {
+      display: block;
+      font-size: 12.5px;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: var(--text);
+    }
+    .calc-field select, .calc-field input {
+      width: 100%;
+      padding: 7px 10px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      font-size: 13px;
+    }
+
+    /* WHO Cards Grid */
+    .who-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 12px;
+      margin: 12px 0;
+    }
+    .who-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 6px;
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary);
+      border-radius: 10px;
+      padding: 12px 14px;
+      text-decoration: none;
+      color: var(--text);
+      transition: all .15s;
+    }
+    .who-card:hover {
+      border-color: var(--primary);
+      background: var(--primary-light);
+      transform: translateY(-1px);
+    }
+    .who-card .wc-title { font-weight: 700; font-size: 14px; color: var(--primary); }
+    .who-card .wc-sub { font-size: 12.5px; color: var(--text-muted); }
+
+    mark.hl {
+      background: #fde047;
+      color: #0f172a;
+      padding: 0 2px;
+      border-radius: 3px;
+    }
+
+    /* Back to top */
+    #topBtn {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 999px;
+      padding: 10px 15px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      display: none;
+      box-shadow: var(--shadow);
+      z-index: 95;
+    }
+    [data-theme="dark"] #topBtn { color: #0b1120; }
+
+    .footer-note {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      text-align: center;
+      margin-top: 28px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 1024px) {
+      .who-top-link { display: none; }
+    }
+    @media (max-width: 960px) {
+      .menu-btn { display: inline-block; }
+      .portal-link { display: none; }
+      .sidebar-home-btn { display: block; }
+      .sidebar {
+        transform: translateX(-100%);
+        box-shadow: var(--shadow);
+      }
+      .sidebar.open { transform: translateX(0); }
+      .main {
+        margin-left: 0;
+        padding: 20px 16px 70px;
+      }
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Topbar -->
+  <header class="topbar">
+    <button class="menu-btn" id="menuBtn" aria-label="開啟目錄">☰</button>
+    <div class="brand">
+      <span>🦴 造血幹細胞移植 (HSCT) 速查手冊</span>
+      <span class="ver">NCCN v1.2025</span>
+    </div>
+    <a class="portal-link" href="https://lichiahans.github.io/hematology-portal/" title="回到血液科臨床資源入口網首頁">🏠 回到首頁</a>
+    <a class="who-top-link" href="https://lichiahans.github.io/who5-hematolymphoid-guide/" target="_blank" rel="noopener" title="開啟 WHO 第 5 版血液腫瘤分類總覽">🌳 WHO 5th 分類</a>
+    <div class="search-wrap">
+      <input type="text" id="searchInput" class="search-input" placeholder="全文搜尋：Treosulfan、Ruxolitinib、MAGIC、BOS、VOD、ABW..." aria-label="搜尋指引內容" />
+      <button class="search-clear" id="searchClear" aria-label="清除搜尋">✕</button>
+    </div>
+    <span class="search-count" id="searchCount"></span>
+    <button class="theme-btn" id="themeBtn" title="切換淺色／深色模式">🌙 深色</button>
+  </header>
+
+  <!-- Sidebar Navigation -->
+  <aside class="sidebar" id="sidebar" aria-label="章節快速導覽">
+    <a class="sidebar-home-btn" href="https://lichiahans.github.io/hematology-portal/">🏠 回到首頁（血液科入口網）</a>
+    <a class="sidebar-home-btn" href="https://lichiahans.github.io/who5-hematolymphoid-guide/" target="_blank" rel="noopener">🌳 WHO 5th 血液腫瘤分類 ↗</a>
+
+    <div class="nav-group-title">更新與移植前評估</div>
+    <a class="nav-link" href="#updates"><span>🆕 v1.2025 更新重點</span><span class="nav-code">UPDATES</span></a>
+    <a class="nav-link" href="#indications"><span>🧭 總論與適應症 (WHO5連結)</span><span class="nav-code">HCT-1</span></a>
+    <a class="nav-link" href="#evaluation"><span>📋 移植前受贈者評估</span><span class="nav-code">HCT-2/3</span></a>
+
+    <div class="nav-group-title">動員、調理與追蹤</div>
+    <a class="nav-link" href="#mobilization"><span>🧬 幹細胞動員與劑量</span><span class="nav-code">HCT-4/4A</span></a>
+    <a class="nav-link" href="#conditioning"><span>⚗️ 調理療程與體重調整</span><span class="nav-code">HCT-A</span></a>
+    <a class="nav-link" href="#followup"><span>🏥 移植後追蹤與 VOD/SOS</span><span class="nav-code">HCT-5</span></a>
+
+    <div class="nav-group-title">移植物抗宿主病 (GVHD)</div>
+    <a class="nav-link" href="#agvhd"><span>🛡️ 急性 GVHD 診斷與分級工具</span><span class="nav-code">GVHD-1~3/A</span></a>
+    <a class="nav-link" href="#cgvhd"><span>🩺 慢性 GVHD 診斷與 NIH 工具</span><span class="nav-code">GVHD-4/B/C</span></a>
+    <a class="nav-link" href="#sr-gvhd"><span>💊 類固醇難治性 GVHD 用藥</span><span class="nav-code">GVHD-D/E</span></a>
+    <a class="nav-link" href="#supportive"><span>🩹 GVHD 支持性照護</span><span class="nav-code">GVHD-F</span></a>
+
+    <div class="nav-group-title">附錄與跨站對照</div>
+    <a class="nav-link" href="#who-appendix"><span>🌳 WHO 5th 對照與縮寫</span><span class="nav-code">WHO5/ABBR</span></a>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main" id="contentRoot">
+    <!-- Hero -->
+    <div class="hero">
+      <h1>造血幹細胞移植 (Hematopoietic Cell Transplantation, HSCT) 臨床速查手冊</h1>
+      <p>依據 NCCN Clinical Practice Guidelines in Oncology: Hematopoietic Cell Transplantation (Version 1.2025 — February 28, 2025) 完整繁體中文整理與翻譯，涵蓋移植適應症、移植前評估、動員療程、MA/RIC/NMA/自體調理與體重調整、移植後併發症，以及急／慢性 GVHD 分級、類固醇難治性用藥與支持性照護。</p>
+      <div class="hero-meta">
+        <span class="hero-pill">📅 NCCN v1.2025 (2025/02/28)</span>
+        <span class="hero-pill">🧮 內建 ABW / aGVHD / cGVHD 三大計算機</span>
+        <span class="hero-pill">⌨️ 按 / 快速全文檢索</span>
+        <a class="hero-pill link-pill" href="https://lichiahans.github.io/bmt-protocol-generator/" target="_blank" rel="noopener">🧪 BMT Protocol 產生器 ↗</a>
+        <a class="hero-pill link-pill" href="https://lichiahans.github.io/who5-hematolymphoid-guide/" target="_blank" rel="noopener">🌳 WHO 5th 血液腫瘤分類 ↗</a>
+      </div>
+    </div>
+
+    <!-- Quick Jump Chips -->
+    <div class="quick-bar">
+      <a class="chip" href="#updates">🆕 v1.2025 新變更</a>
+      <a class="chip" href="#indications">🧭 17 大疾病適應症</a>
+      <a class="chip" href="#evaluation">📋 HCT-CI / DLCO 評估</a>
+      <a class="chip" href="#mobilization">🧬 Plerixafor / Motixafortide</a>
+      <a class="chip" href="#conditioning">⚗️ Treosulfan / ABW 計算機</a>
+      <a class="chip" href="#followup">🏥 VOD/SOS &amp; Defibrotide</a>
+      <a class="chip" href="#agvhd">🛡️ MAGIC 急性 GVHD 計算機</a>
+      <a class="chip" href="#cgvhd">🩺 NIH 慢性 GVHD 計算機</a>
+      <a class="chip" href="#sr-gvhd">💊 Ruxolitinib / Belumosudil / Axatilimab</a>
+      <a class="chip" href="#supportive">🩹 GVHD 支持照護</a>
+    </div>
+
+    <!-- 1. UPDATES -->
+    <section class="card" id="updates">
+      <div class="sec-header">
+        <h2>🆕 NCCN v1.2025 更新重點（對照 v2.2024）</h2>
+        <div class="sec-tags"><span class="code-tag">UPDATES</span><span class="badge b-new">2025/02/28</span></div>
+      </div>
+
+      <div class="grid-2">
+        <div class="box">
+          <h4>🧬 動員與調理療程更新 (HCT-4A, HCT-A)</h4>
+          <ul>
+            <li><strong>自體動員 Cyclophosphamide (HCT-4A)</strong>：<code>Filgrastim/Sargramostim + Cyclophosphamide ± plerixafor</code> 之劑量改為 <strong>1500–3000 mg/m² IV</strong>（刪除「限單次給藥 for one dose」字樣）；新增 <strong>Footnote r</strong>：任何系統性生物製劑皆可以 FDA 核准之生物相似藥 (biosimilar) 替代。</li>
+            <li><strong>新增異體 MA 調理：Fludarabine + Treosulfan (HCT-A 3/10)</strong> <span class="badge b-new">NEW</span>：列為 Category 2A 建議（Fludarabine 30 mg/m²/day × 5 天 + Treosulfan 10 g/m²/day × 3 天）。</li>
+            <li><strong>體重調整表新增 Treosulfan (HCT-A 7/10)</strong>：成人與兒童皆依<strong>總體重 (Total Body Weight)</strong> 計算 BSA 給藥。</li>
+            <li><strong>簡化 NMA 範例清單 (HCT-A 1/10)</strong>：移除 Flu+Cy±ATG、Flu+Ara-C+Ida、Cladribine+Ara-C 範例，聚焦於 TBI ≤2 Gy ± 嘌呤類似物與 TLI + ATG。</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h4>🏥 追蹤併發症與 GVHD 治療更新 (HCT-5, GVHD-4/E/F)</h4>
+          <ul>
+            <li><strong>移植後併發症重整 (HCT-5)</strong>：獨立列出「感染」（參見 NCCN 癌症相關感染指引）、「多重器官功能障礙」，並新增 <strong>Footnote w</strong> 強調<strong>肝臟 VOD/SOS</strong> 之致命風險及 <strong>Defibrotide</strong> 獲 FDA 核准用於合併腎或肺功能障礙之 VOD/SOS。</li>
+            <li><strong>慢性 GVHD 一線治療 (GVHD-4)</strong> <span class="badge b-new">NEW</span>：新增 <strong>Sirolimus + prednisone</strong>；肺部侵犯方案由 <code>±</code> 改為明確合併 <strong>Inhaled steroid + azithromycin + montelukast (FAM)</strong>。</li>
+            <li><strong>類固醇難治性 GVHD (GVHD-E)</strong> <span class="badge b-new">NEW</span>：標題改為「FDA 核准 Category 1 藥物」與「其他 FDA 核准藥物（依核准日期排序）」；急性 GVHD 替代藥物新增 <strong>uhCG/EGF</strong>（尿液來源人類絨毛膜促性腺激素／表皮生長因子）。</li>
+            <li><strong>慢性口腔 GVHD 支持照護 (GVHD-F)</strong>：改為考慮 <strong>dexamethasone 或 CNI 漱口水</strong>（含漱後吐出 swish and spit）。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. INTRODUCTION & INDICATIONS -->
+    <section class="card" id="indications">
+      <div class="sec-header">
+        <h2>🧭 總論、移植物來源與移植適應症</h2>
+        <div class="sec-tags">
+          <span class="code-tag">INTRO</span>
+          <span class="code-tag">HCT-1</span>
+          <a class="who-pill" href="https://lichiahans.github.io/who5-hematolymphoid-guide/" target="_blank" rel="noopener">🌳 WHO 5th 總覽 ↗</a>
+        </div>
+      </div>
+
+      <div class="callout">
+        <strong>適用範圍 (INTRO)：</strong>本 NCCN 指引專為接受<strong>造血幹細胞移植 (HCT) 之成人惡性腫瘤病人</strong>訂定。所有建議除非另有標註，均為 <strong>Category 2A</strong>。
+      </div>
+
+      <h3>一、自體 (Autologous) vs 異體 (Allogeneic) 移植與移植物來源比較 (MS-2~4)</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>比較項目</th>
+              <th>自體移植 (Autologous HCT)</th>
+              <th>異體移植 (Allogeneic HCT)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>核心機轉</strong></td>
+              <td>高劑量化療（MA 調理）消滅腫瘤，再回輸病人自身預先冷凍之幹細胞以「救援 (rescue)」骨髓造血功能。</td>
+              <td>調理清除殘存腫瘤並抑制受贈者免疫系統，植入健康捐贈者幹細胞，並藉<strong>移植物抗腫瘤效應 (GVT/GVL)</strong> 達到長期根治（尤其在 RIC/NMA）。</td>
+            </tr>
+            <tr>
+              <td><strong>主要適應症</strong></td>
+              <td>多發性骨髓瘤 (MM，延長 PFS/OS 但非根治)、復發/難治 HL 與 NHL、PCNSL、特定實體瘤（生殖細胞腫瘤、CNS 腫瘤）、少數 AML 鞏固。</td>
+              <td>AML、ALL、MDS、MPN（骨髓纖維化）、進階期或 TKI 難治 CML、R/R HL 與 NHL、特定高風險 CLL 與 MM。</td>
+            </tr>
+            <tr>
+              <td><strong>優點／風險</strong></td>
+              <td>無 GVHD、感染風險較低、治療相關死亡率 (TRM) 低；但<strong>復發率較高</strong>。<em>（體外淨化 graft purging 無臨床益處）</em></td>
+              <td>復發率較低、具根治潛力；但須面對 <strong>GVHD、感染與較高非復發死亡率 (NRM)</strong>。</td>
+            </tr>
+            <tr>
+              <td><strong>捐贈者／來源比較</strong></td>
+              <td>幾乎全面採用 <strong>G-CSF 動員周邊血幹細胞 (PBPC)</strong>（免全麻、植入快）。</td>
+              <td>
+                • <strong>HLA 全合手足 (MSD)</strong>：首選；<strong>HLA 全合非親屬 (MUD)</strong> 存活率相近。<br>
+                • <strong>半相合親屬 (Haploidentical)</strong>：取得快、費用低；搭配 <strong>PTCy</strong> 預防 GVHD 療效與全合相當（限一等親，非一等親可能影響存活）。<br>
+                • <strong>臍帶血 (UCB)</strong>：取得快、cGVHD 少、HLA 配對較寬鬆，但細胞數受體重限制、植入慢、感染與植入失敗風險較高，強烈建議轉介有經驗中心。<br>
+                • <strong>PBPC vs 骨髓 (BM)</strong>：PBPC 植入快、不易植入失敗，但 <strong>cGVHD 風險較高</strong>；半相合或 HLA 不合非親屬移植有學者建議採用 BM 以降低 GVHD。
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>二、NCCN 成人 HCT 適應症清單與 WHO 5th／疾病個論直連 (HCT-1)</h3>
+      <p>HCT 適應症隨疾病與緩解狀態而異，以下列出 NCCN HCT-1 所列 17 項疾病指引，並為血液腫瘤提供 <strong>WHO 5th 分類</strong> 與 <strong>本入口網個論</strong> 快速連結：</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>疾病類別 (NCCN HCT-1)</th>
+              <th>常見移植角色</th>
+              <th>WHO 5th 分類直連</th>
+              <th>本站 NCCN 個論</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>急性淋巴芽細胞白血病 (ALL)</strong></td>
+              <td>異體（年輕體健優先 TBI-based MA）</td>
+              <td>
+                <a class="who-pill" href="https://lichiahans.github.io/who5-hematolymphoid-guide/#ch4-pre" target="_blank" rel="noopener">🌳 B-ALL ↗</a>
+                <a class="who-pill" href="https://lichiahans.github.io/who5-hematolymphoid-guide/#ch5-pre" target="_blank" rel="noopener">🌳 T-ALL ↗</a>
+              </td>
+              <td><a class="nccn-pill" href="https://lichiahans.github.io/all-nccn-guide/" target="_blank" rel="noopener">📘 ALL 個論 ↗</a></td>
+            </tr>
+            <tr>
+              <td><strong>急性骨髓性白血病 (AML) / APL</strong></td>
+              <td>異體（中高風險/R/R）；APL 復發可考慮自體</td>
+              <td>
+                <a class="who-pill" href="https://lichiahans.github.io/who5-hematolymphoid-guide/#ch2-aml" target="_blank" rel="noopener">🌳 Ch.2 AML ↗</a>
+                <a class="who-pill" href="https://lichiahans.github.io/who5-hematolymphoid-guide/#ch2-aml-pml" target="_blank" rel="noopener">🌳 APL ↗</a>
+              </td>
+              <td><a class="nccn-pill" href="https://lichiahans.github.io/aml-nccn-guide/" target="_blank" rel="noopener">📘 AML 個論 ↗</a></td>
+            </tr>
+            <tr>
+              <td><strong>B 細胞淋巴瘤 (B-Cell Lymphomas)</strong></td>
+              <td>自體（R/R 化療敏感、PCNSL、MCL）；異體（RIC/NMA）</td>
+              <td>
+                <a class="who-pill" href="https://lichiahans.github.io/who5-hematolymphoid-guide/#ch4-mature" target="_blank" rel="noopener">🌳 Ch.4 成熟 B ↗</a>
+                <a class="who-pill" href="https://lichiahans.github.io/who5-hematolymphoid-guide/#ch4-ip" target="_blank" rel="noopener">🌳 PCNSL ↗</a>
+              </td>
+              <td><a class="nccn-pill" href="https://lichiahans.github.io/bcell-lymphoma-nccn-guide/" target="_blank" rel="noopener">📘 B-Cell 個論 ↗</a></td>
+            </tr>
+            <tr>
+              <td><strong>慢性淋巴球性白血病 (CLL / SLL)</strong></td>
+              <td>高風險/雙重難治或 Richter 轉化考慮異體 (RIC/NMA)</td>
+              <td><a class="who-pill" href="https://lichiahans.github.io/who5-hematolymphoid-guide/#ch4-cll" target="_blank" rel="noopener">🌳 Ch.4 CLL/SLL ↗</a></td>
+              <td><a class="nccn-pill" href="https://lichiahans.github.io/cll-nccn-guide/" target="_blank" rel="noopener">📘 CLL 個論 ↗</a></td>
+            </tr>
+            <tr>
+              <td><strong>慢性骨髓性白血病 (CML)</strong></td>
+              <td>進階期/芽球期、TKI 難治或高風險 ABL 突變考慮異體</td>
+              <td><a class="who-pill" href="https://lichiahans.github.io/who5-hematolymphoid-guide/#ch2-cml" target="_blank" rel="noopener">🌳 Ch.2 CML ↗</a></td>
+              <td><a class="nccn-pill" href="https://lichiahans.github.io/cml-nccn-guide/" target="_blank" rel="noopener">📘 CML 個論 ↗</a></td>
+            </tr>
+            <tr>
+              <td><strong>何杰金氏淋巴瘤 (Hodgkin Lymphoma)</strong></td>
+              <td>R/R 首選自體；自體後復發考慮異體 (RIC/NMA)</td>
+              <td><a class="who-pill" href="https://lichiahans.github.io/who5-hematolymphoid-guide/#ch4-hl" target="_blank" rel="noopener">🌳 Ch.4 HL ↗</a></td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td><strong>多發性骨髓瘤 (MM) / 漿細胞白血病</strong></td>
+              <td>標準一線鞏固自體 (Mel200)；特定高風險考慮異體 (RIC/NMA)</td>
+              <td><a class="who-pill" href="https://lichiahans.github.io/who5-hematolymphoid-guide/#ch4-pcm" target="_blank" rel="noopener">🌳 Ch.4 漿細胞骨髓瘤 ↗</a></td>
+              <td><a class="nccn-pill" href="https://lichiahans.github.io/mm-nccn-guide/" target="_blank" rel="noopener">📘 MM 個論 ↗</a></td>
+            </tr>
+            <tr>
+              <td><strong>骨髓增生異常症候群 (MDS / MDN)</strong></td>
+              <td>中高風險唯一根治手段：異體移植 (MA 或 RIC)</td>
+              <td><a class="who-pill" href="https://lichiahans.github.io/who5-hematolymphoid-guide/#ch2-mdn" target="_blank" rel="noopener">🌳 Ch.2 MDN/MDS ↗</a></td>
+              <td><a class="nccn-pill" href="https://lichiahans.github.io/mds-nccn-guide/" target="_blank" rel="noopener">📘 MDS 個論 ↗</a></td>
+            </tr>
+            <tr>
+              <td><strong>骨髓增生性腫瘤 (MPN / 骨髓纖維化)</strong></td>
+              <td>中高風險原發／次發骨髓纖維化考慮異體移植</td>
+              <td>
+                <a class="who-pill" href="https://lichiahans.github.io/who5-hematolymphoid-guide/#ch2-mpn" target="_blank" rel="noopener">🌳 Ch.2 MPN ↗</a>
+                <a class="who-pill" href="https://lichiahans.github.io/who5-hematolymphoid-guide/#ch2-pmf" target="_blank" rel="noopener">🌳 PMF ↗</a>
+              </td>
+              <td><a class="nccn-pill" href="https://lichiahans.github.io/mpn-nccn-guide/" target="_blank" rel="noopener">📘 MPN 個論 ↗</a></td>
+            </tr>
+            <tr>
+              <td><strong>T 細胞淋巴瘤 / 原發皮膚淋巴瘤</strong></td>
+              <td>自體鞏固或 R/R 異體移植 (RIC/NMA)</td>
+              <td>
+                <a class="who-pill" href="https://lichiahans.github.io/who5-hematolymphoid-guide/#ch5-mature" target="_blank" rel="noopener">🌳 Ch.5 成熟 T/NK ↗</a>
+                <a class="who-pill" href="https://lichiahans.github.io/who5-hematolymphoid-guide/#ch5-m-cut" target="_blank" rel="noopener">🌳 皮膚 T 細胞 ↗</a>
+              </td>
+              <td><a class="nccn-pill" href="https://lichiahans.github.io/tcell-nccn-guide/" target="_blank" rel="noopener">📘 T-Cell 個論 ↗</a></td>
+            </tr>
+            <tr>
+              <td><strong>全身性輕鏈類澱粉沉積症 (AL Amyloidosis)</strong></td>
+              <td>精選病人自體移植（常採減量 Melphalan 70–140 mg/m²）</td>
+              <td><a class="who-pill" href="https://lichiahans.github.io/who5-hematolymphoid-guide/#ch4-dep-hcd" target="_blank" rel="noopener">🌳 Ch.4 類澱粉沉積 ↗</a></td>
+              <td><a class="nccn-pill" href="https://lichiahans.github.io/mm-nccn-guide/" target="_blank" rel="noopener">📘 MM/MGCS ↗</a></td>
+            </tr>
+            <tr>
+              <td><strong>全身性肥大細胞增生症 (SM)</strong></td>
+              <td>進階型 SM (AdvSM) 考慮異體移植</td>
+              <td><a class="who-pill" href="https://lichiahans.github.io/who5-hematolymphoid-guide/#ch2-sm" target="_blank" rel="noopener">🌳 Ch.2 SM ↗</a></td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td><strong>華氏巨球蛋白血症 (WM / LPL)</strong></td>
+              <td>特定復發病人考慮自體或異體移植</td>
+              <td><a class="who-pill" href="https://lichiahans.github.io/who5-hematolymphoid-guide/#ch4-m-lpl" target="_blank" rel="noopener">🌳 Ch.4 LPL/WM ↗</a></td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td><strong>實體瘤（CNS 腫瘤、滋養層細胞腫瘤 GTN、睪丸癌）</strong></td>
+              <td>高劑量化療併自體幹細胞救援（如 Carboplatin + Etoposide）</td>
+              <td>—（非血液腫瘤）</td>
+              <td>—</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 3. PRE-TRANSPLANT RECIPIENT EVALUATION -->
+    <section class="card" id="evaluation">
+      <div class="sec-header">
+        <h2>📋 移植前受贈者評估 (Pre-Transplant Recipient Evaluation)</h2>
+        <div class="sec-tags"><span class="code-tag">HCT-2</span><span class="code-tag">HCT-3</span></div>
+      </div>
+
+      <div class="callout ok">
+        <strong>評估核心原則：</strong>應以<strong>生理年齡 (Physiological age)</strong>、體能狀態、共病指數 (HCT-CI) 與老人醫學評估決定移植資格，而非單憑實際年齡。捐贈者評估與 HLA 分型請依 <strong>FACT-JACIE 國際標準第 8 版</strong>。
+      </div>
+
+      <div class="grid-2">
+        <div class="box">
+          <h4>1️⃣ 常規必做：臨床與器官功能評估 (HCT-2)</h4>
+          <ul>
+            <li><strong>確認組織病理診斷</strong>與<strong>疾病狀態評估</strong>（含細胞遺傳／分子風險分層、MRD，及 CIBMTR <strong>Disease Risk Index [DRI]</strong> 預測存活）。</li>
+            <li><strong>病史與理學檢查</strong>：含 <strong>ECOG / KPS</strong> 體能狀態與 BMI。</li>
+            <li><strong>骨髓穿刺與切片</strong>：確認緩解狀態（病理、流式、染色體、分子）並排除其他疾病；<strong>急性白血病理想上應於調理開始前 4 週內完成</strong>。</li>
+            <li><strong>肺功能檢查 (PFTs)</strong>：肺量計、肺容積與 <strong>DLCO</strong>（須以 <strong>Dinakara 公式依血紅素校正</strong>）。
+              <ul>
+                <li>若 <strong>DLCO &lt;60%</strong>：考慮胸腔科會診及／或動脈血氣分析 (ABG)。</li>
+                <li>若 DLCO 顯著下降：使用 <strong>Busulfan 或 Carmustine (BCNU)</strong> 須特別謹慎。</li>
+              </ul>
+            </li>
+            <li><strong>心臟評估</strong>：ECG（含 <strong>QTc 間期</strong>）＋ <strong>LVEF</strong>（心臟超音波［需評估瓣膜時］或 MUGA）；若 LVEF 受損考慮心臟科會診。</li>
+            <li><strong>心理社會評估</strong>：服藥順從性、高風險行為、情緒障礙與照護者支持；必要時轉介心理腫瘤、社工或成癮精神科。</li>
+            <li><strong>HCT-CI 共病指數（異體必算）</strong>：比年齡與體能更能準確預測 <strong>NRM</strong>（但不預測復發）；計算工具：<a href="http://hctci.org" target="_blank" rel="noopener">hctci.org ↗</a>。</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h4>2️⃣ 常規必做：影像與實驗室檢查 (HCT-2)</h4>
+          <ul>
+            <li><strong>影像</strong>：疾病專屬再分期影像；若無其他胸部影像則照 <strong>Chest X-ray</strong>。</li>
+            <li><strong>血液與凝血</strong>：CBC/DC、ABO/Rh 血型、PT/aPTT、尿液常規。</li>
+            <li><strong>生化檢驗</strong>：血糖、Creatinine / eGFR（注意 <strong>CNI 會增加移植後腎衰竭風險</strong>）、電解質、肝功能（轉胺酶與膽紅素）。
+              <ul>
+                <li><strong>肝硬化（尤其併門脈高壓）通常為異體 HCT 之禁忌症</strong>。</li>
+                <li>可使用 CIBMTR <strong>VOD/SOS 風險計算機</strong>評估肝靜脈閉塞風險。</li>
+              </ul>
+            </li>
+            <li><strong>感染症篩檢</strong>：<strong>CMV、HSV、VZV、HBV、HCV、HIV、梅毒 (Syphilis)</strong>。</li>
+            <li><strong>異體移植專屬檢查</strong>：
+              <ul>
+                <li><strong>HLA 分型</strong>（依 FACT-JACIE 標準）。</li>
+                <li><strong>弓漿蟲 (Toxoplasma) 血清學</strong>。</li>
+                <li>捐贈者與受贈者 <strong>STR 基因分型</strong>（作為移植後嵌合體 chimerism 追蹤基準）。</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>3️⃣ 視臨床需求加做之評估 (HCT-3)</h3>
+      <div class="grid-3">
+        <div class="box">
+          <h4>🩺 額外臨床評估</h4>
+          <ul>
+            <li>腰椎穿刺 (LP) 腦脊髓液分析</li>
+            <li><strong>生育保存討論</strong></li>
+            <li>具生育潛力者<strong>驗孕</strong></li>
+            <li>物理治療評估（肌力、柔軟度、功能）</li>
+            <li>營養評估</li>
+            <li>精選病人考慮<strong>老人醫學評估</strong> <span class="badge b-cat2b">Cat 2B</span></li>
+            <li><strong>牙科評估</strong>（異體 HCT）</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h4>🩻 額外影像檢查</h4>
+          <ul>
+            <li><strong>胸部 CT</strong></li>
+            <li><strong>鼻竇 CT</strong></li>
+          </ul>
+        </div>
+        <div class="box">
+          <h4>🧪 額外實驗室檢查</h4>
+          <ul>
+            <li><strong>EBV</strong> 或高風險感染症篩檢（TB、糞小桿線蟲 <em>Strongyloides</em>、異體加測 HTLV-I/II）</li>
+            <li><strong>HLA 抗體檢測</strong>（使用 HLA 不合捐贈者時）</li>
+            <li>24 小時尿液肌酸酐清除率（邊緣腎功能或低肌肉量）</li>
+            <li>尿液毒物篩檢（有物質使用病史者）</li>
+            <li>TSH、鐵質檢查（含 Ferritin）、血脂、維生素 D</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. HEMATOPOIETIC CELL MOBILIZATION -->
+    <section class="card" id="mobilization">
+      <div class="sec-header">
+        <h2>🧬 造血幹細胞動員與採集療程</h2>
+        <div class="sec-tags"><span class="code-tag">HCT-4</span><span class="code-tag">HCT-4A</span></div>
+      </div>
+
+      <div class="grid-2">
+        <div class="box">
+          <h4>🎯 自體捐贈者 (Autologous) 動員策略與目標</h4>
+          <ul>
+            <li><strong>最低目標採集量</strong>：<strong>2–5 × 10⁶ CD34+ 細胞/kg</strong>（強烈建議 &gt;2，理想目標 4–5 × 10⁶；&lt;2 可能導致植入延遲）。</li>
+            <li><strong>建議動員方案（採集前監測周邊血 CD34 計數）</strong>：
+              <ul>
+                <li>G-CSF + Plerixafor（大幅提高達標率、降低失敗率）</li>
+                <li>G-CSF + Cyclophosphamide ± Plerixafor</li>
+                <li>GM-CSF (Sargramostim) + Cyclophosphamide ± Plerixafor</li>
+                <li>Pegfilgrastim + Plerixafor</li>
+                <li>G-CSF + Motixafortide（MM 三期試驗 92.5% 於 ≤2 天達 ≥6×10⁶）</li>
+                <li>單用 G-CSF 或 G-CSF + 疾病特異性化療 ± Plerixafor</li>
+              </ul>
+            </li>
+            <li><strong>若收集不足 (&lt;2 × 10⁶/kg)</strong>：調高 G-CSF 劑量或改給藥頻率、加用 <strong>Plerixafor（搶救性 "just-in-time" 策略）</strong>、改化療動員 ± Plerixafor、<strong>骨髓採集 (BM harvest)</strong>、或若許可則<strong>休息 2–4 週後再動員</strong>。</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h4>🎯 異體捐贈者 (Allogeneic) 動員策略與目標</h4>
+          <ul>
+            <li><strong>最低目標採集量</strong>：<strong>4–5 × 10⁶ CD34+ 細胞/kg</strong>。</li>
+            <li><strong>標準方案</strong>：<strong>單用 G-CSF</strong>（Filgrastim、Tbo-filgrastim 或 FDA 核准之生物相似藥；使用生物相似藥/tbo-filgrastim 建議密切長期追蹤捐贈者）。</li>
+            <li><strong>若收集不足 (&lt;4 × 10⁶/kg)</strong>：考慮加用 <strong>Plerixafor</strong> 至 G-CSF，或改採<strong>骨髓採集</strong>（參考 NMDP/Be the Match 指引）。</li>
+          </ul>
+          <div class="callout warn" style="margin-bottom:0;">
+            <strong>安全警語 (MS-7)：</strong>動員期間若白血球 <strong>WBC &gt;50,000/μL</strong>，須審慎評估並密切監測<strong>脾臟疼痛</strong>（極罕見脾腫大或脾破裂風險）。動員失敗高風險因子包括高齡、多次化療、骨髓區域放療、低 WBC (&lt;4000) 及多療程 Fludarabine / Lenalidomide。
+          </div>
+        </div>
+      </div>
+
+      <h3>📋 動員療程標準劑量表 (HCT-4A)</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>適用對象</th>
+              <th>動員方案</th>
+              <th>詳細劑量與給藥時程</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td rowspan="5"><strong>自體捐贈者<br>(Autologous)</strong></td>
+              <td><strong>Filgrastim ± Plerixafor</strong></td>
+              <td>• Filgrastim<sup>*</sup>：<strong>10 mcg/kg SC QD × 4–5 天</strong>，持續至達收集目標。<br>• Plerixafor：<strong>0.24 mg/kg 實際體重 SC（上限 40 mg/day）</strong>，於採集前一日施打（通常於採集前約 <strong>11 小時</strong>）。</td>
+            </tr>
+            <tr>
+              <td><strong>Filgrastim + Cyclophosphamide ± Plerixafor</strong> <span class="badge b-new">v1.2025</span></td>
+              <td>• Cyclophosphamide：<strong>1500–3000 mg/m² IV</strong>。<br>• Filgrastim<sup>*</sup>：<strong>10 mcg/kg SC QD</strong>，於 Cy 後 24 小時起持續至達標；Cy 後至少 4–5 天開始採集（依周邊 CD34 決定）。<br>• Plerixafor：0.24 mg/kg 實際體重 SC（上限 40 mg/day），採集前約 11 小時。</td>
+            </tr>
+            <tr>
+              <td><strong>Sargramostim + Cyclophosphamide ± Plerixafor</strong> <span class="badge b-new">v1.2025</span></td>
+              <td>• Cyclophosphamide：<strong>1500–3000 mg/m² IV</strong>。<br>• Sargramostim (GM-CSF)：<strong>250 mcg/m²/day</strong>（24 小時 IV 輸注或 SC QD），於 Cy 後 24 小時起至達標；Cy 後至少 4–5 天採集。<br>• Plerixafor：同上。</td>
+            </tr>
+            <tr>
+              <td><strong>Pegfilgrastim + Plerixafor</strong></td>
+              <td>• Pegfilgrastim<sup>*</sup>：<strong>6 mg SC（Day 1）</strong>。<br>• 前導 Plerixafor：<strong>0.24 mg/kg 實際體重 SC（上限 40 mg/day，Day 3）</strong> → <strong>Day 4 採集</strong>。</td>
+            </tr>
+            <tr>
+              <td><strong>Filgrastim + Motixafortide</strong></td>
+              <td>• Filgrastim<sup>*</sup>：<strong>10 mcg/kg SC QD × 4 天</strong>（於首劑 Motixafortide 前）。<br>• Motixafortide：<strong>1.25 mg/kg 實際體重 SC</strong>，於開始採集前 <strong>10–14 小時</strong>施打。</td>
+            </tr>
+            <tr>
+              <td><strong>異體捐贈者<br>(Allogeneic)</strong></td>
+              <td><strong>Filgrastim 單藥</strong></td>
+              <td>• Filgrastim<sup>*</sup>：<strong>10 mcg/kg 捐贈者體重 SC QD（或分 BID 施打）× 4–5 天</strong>。<br>• 於<strong>第 4 或第 5 天</strong>進行採集。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:12.5px;color:var(--text-muted);">*註 (Footnote r, s)：任何建議之系統性生物製劑（含 Filgrastim、Pegfilgrastim）皆可以 FDA 核准之生物相似藥 (biosimilar) 或 Tbo-filgrastim 替代。</p>
+    </section>
+
+    <!-- 5. PRINCIPLES OF CONDITIONING -->
+    <section class="card" id="conditioning">
+      <div class="sec-header">
+        <h2>⚗️ 調理療程原則、常用處方與體重調整</h2>
+        <div class="sec-tags">
+          <span class="code-tag">HCT-A (1–7)</span>
+          <a class="nccn-pill" href="https://lichiahans.github.io/bmt-protocol-generator/" target="_blank" rel="noopener">🧪 BMT Protocol 產生器 ↗</a>
+        </div>
+      </div>
+
+      <h3>一、調理療程強度定義與選擇原則 (HCT-A 1–2/10)</h3>
+      <div class="grid-3">
+        <div class="box" style="border-top:3px solid var(--danger-border);">
+          <h4>🔥 骨髓清除性 (MA)</h4>
+          <p>造成不可逆（或近乎不可逆）全血球低下，必須輸注造血幹細胞救援以防骨髓再生不良致死。</p>
+          <ul>
+            <li><strong>TBI</strong> ≥5 Gy 單次 或 ≥8 Gy 分次</li>
+            <li><strong>Busulfan</strong> 口服 &gt;8 mg/kg（<strong>IV &gt;6.4 mg/kg</strong>）或等效血漿暴露量 (AUC)<sup>*</sup></li>
+          </ul>
+          <p><strong>年輕體健者優先用於：</strong>ALL（優先 TBI-based）、AML、CML、MDS。</p>
+        </div>
+        <div class="box" style="border-top:3px solid var(--warn-border);">
+          <h4>⚖️ 減低強度 (RIC)</h4>
+          <p>未符合 MA 亦未符合 NMA 定義之中間強度調理。</p>
+          <p><strong>與 NMA 並列優先用於：</strong></p>
+          <ul>
+            <li>淋巴瘤 (NHL / HL)</li>
+            <li>CLL、漿細胞疾病 (MM / PCL)</li>
+            <li>曾接受過自體 HCT 者</li>
+            <li>年長或體能不適合 MA 者</li>
+          </ul>
+        </div>
+        <div class="box" style="border-top:3px solid var(--ok-border);">
+          <h4>🌿 非骨髓清除性 (NMA)</h4>
+          <p>僅造成輕微血球低下，無絕對需要造血幹細胞救援（若排斥仍可自體恢復造血）。</p>
+          <ul>
+            <li><strong>TBI ≤2 Gy</strong> ± 嘌呤類似物 (如 Flu)</li>
+            <li><strong>全淋巴照射 (TLI) + ATG</strong></li>
+          </ul>
+          <p><em>註：v1.2025 簡化 NMA 範例清單。</em></p>
+        </div>
+      </div>
+      <p style="font-size:12.5px;color:var(--text-muted);">*Busulfan 血漿暴露量應以 AUC (mg × h/L) 報告：例如 <code>AUC 5000 μM × min = 20.5 mg × h/L</code>。</p>
+
+      <div class="callout danger">
+        <strong>⚠️ 調理特殊警示 (Special Situations, HCT-A 2/10)：</strong>
+        <ul style="margin-bottom:0;">
+          <li><strong>肺功能顯著受損</strong>：使用高劑量 <strong>Busulfan、Carmustine (BCNU)、高劑量 TBI</strong> 須高度謹慎。</li>
+          <li><strong>肝臟 SOS/VOD 風險上升</strong>：顯著肝功能異常使用高劑量 Bu / TBI；或移植前曾用 <strong>Inotuzumab / Gemtuzumab</strong> 並併用雙烷化劑調理。</li>
+          <li><strong>Sirolimus + Tacrolimus 併用</strong>：會增加 <strong>SOS 與血栓性微血管病變 (TMA)</strong> 風險，尤其搭配 MA 調理時。</li>
+          <li><strong>免疫檢查點抑制劑 (ICI) 或 Mogamulizumab</strong>（移植前或後）：會顯著增加 <strong>GVHD</strong> 風險；臨床許可下，建議在停藥後間隔<strong>至少 8–12 週</strong>再開始移植調理！</li>
+          <li><strong>Thiotepa</strong>：會經由皮膚排泄，須執行特殊皮膚清潔照護（參見仿單）。</li>
+          <li><strong>臍帶血 (UCB) MA 調理</strong>：使用 <strong>Omidubicel-onlv</strong> 可顯著縮短中性球植入時間（12 vs 22 天）並降低細菌/黴菌感染風險。</li>
+        </ul>
+      </div>
+
+      <h3>二、常用調理療程分頁速查 (HCT-A 3–6/10)</h3>
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="cond-ma">異體 / UCB MA 療程</button>
+        <button class="tab-btn" data-tab="cond-nma-ric">異體 / UCB NMA &amp; RIC</button>
+        <button class="tab-btn" data-tab="cond-noflu">無 Fludarabine RIC</button>
+        <button class="tab-btn" data-tab="cond-auto">自體移植療程 (依疾病)</button>
+      </div>
+
+      <div class="tab-panel active" id="cond-ma">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>移植類型</th><th>類別</th><th>常用 MA 療程與劑量</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="3"><strong>異體移植<br>(Allogeneic)</strong></td>
+                <td><strong>TBI-Based</strong></td>
+                <td>
+                  • <strong>Cy + TBI</strong>：Cyclophosphamide 60 mg/kg/day × 2d<sup>a</sup> + TBI 12–13.2 Gy 分次<br>
+                  • <strong>Flu + TBI</strong>：Fludarabine 30 mg/m²/day × 4d + TBI 12–13.2 Gy 分次<br>
+                  • <strong>Etoposide + TBI</strong>：Etoposide 60 mg/kg 單劑 + TBI 12–13.2 Gy 分次
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Treosulfan-Based</strong> <span class="badge b-new">v1.2025 新增</span></td>
+                <td>
+                  • <strong>Flu + Treosulfan</strong> (Cat 2A)：Fludarabine 30 mg/m²/day × 5d + <strong>Treosulfan 10 g/m²/day × 3d</strong>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Busulfan-Based (優先 IV)</strong><sup>b</sup></td>
+                <td>
+                  • <strong>Bu + Cy</strong><sup>c</sup>：Busulfan 3.2 mg/kg/day × 4d + Cy 60 mg/kg/day × 2d<sup>a</sup><br>
+                  • <strong>Flu + Bu (Bu4)</strong>：Busulfan 3.2 mg/kg/day (總量 12.8 mg/kg) × 4d + Flu 30–32 mg/m²/day × 4–5d<br>
+                  • <strong>Flu + Bu + Thiotepa (TBF)</strong>：Flu 30–40 mg/m²/day × 4d 或 50 mg/m²/day × 3d + Bu 3.2 mg/kg/day × 3–4d + Thiotepa 5 mg/kg/day × 1–2d<br>
+                  • <strong>Clofarabine + Bu</strong>：Clofarabine 20–40 mg/m²/day × 4–5d + Bu AUC 4000–5500 (或 3.2 mg/kg/day) × 4d
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="2"><strong>臍帶血<br>(UCB)</strong></td>
+                <td><strong>TBI-Based</strong></td>
+                <td>
+                  • <strong>Flu + Cy + TBI</strong>：Flu 30–45 mg/m²/day × 4d + Cy 60 mg/kg/day × 2d + TBI 13.2 Gy 分次<br>
+                  • <strong>Flu + Thiotepa + TBI</strong>：Flu 40 mg/m²/day × 4d + Thiotepa 5 mg/kg/day × 2d + TBI 13.2 Gy 分次
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Busulfan-Based</strong></td>
+                <td>
+                  • <strong>Flu + Bu + Thiotepa</strong>：Thiotepa 5 mg/kg/day × 2d + Bu 3.2 mg/kg/day × 3d + Flu 50 mg/m²/day × 3d
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:12.5px;color:var(--text-muted);"><sup>a</sup>若以 PTCy 預防 GVHD，須謹慎評估調理中 Cy 劑量。<sup>b</sup>優先 IV Busulfan（藥動學與毒性較穩定）。<sup>c</sup>Cy/Bu 與 Bu/Cy 順序不同（毒性與藥動學有差異）。</p>
+      </div>
+
+      <div class="tab-panel" id="cond-nma-ric">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>強度／類型</th><th>療程名稱</th><th>劑量與給藥天數</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="2"><strong>NMA (異體)</strong></td>
+                <td><strong>Flu + TBI</strong></td>
+                <td>Fludarabine 30 mg/m²/day × 3d + TBI 2 Gy</td>
+              </tr>
+              <tr>
+                <td><strong>Flu + Cy ± Rituximab</strong></td>
+                <td>Flu 30 mg/m²/day × 3d + Cy 750 mg/m²/day × 3d；Rituximab 375 mg/m² IV（移植前 1 天）＋ 1000 mg/m² IV（移植後 D1, D8, D15）</td>
+              </tr>
+              <tr>
+                <td rowspan="6"><strong>RIC (異體)</strong></td>
+                <td><strong>Flu + Melphalan</strong></td>
+                <td>Flu 20–36 mg/m²/day × 4–5d + Melphalan 100–140 mg/m²（分 1–2 天）<sup>*</sup></td>
+              </tr>
+              <tr>
+                <td><strong>Flu + Busulfan (Bu2/3)</strong></td>
+                <td>Flu 30 mg/m²/day × 4–5d + Bu 3.2 mg/kg/day IV × 2–3d（或 1.6 mg/kg/day IV × 4d）</td>
+              </tr>
+              <tr>
+                <td><strong>Flu + Cy + TBI</strong></td>
+                <td>Flu 30 mg/m²/day × 5d（或 25 mg/m²/day × 6d）+ Cy 14.5 mg/kg/day × 2d + TBI 2–4 Gy</td>
+              </tr>
+              <tr>
+                <td><strong>Flu + Mel + TBI</strong><sup>*</sup></td>
+                <td>Flu 30 mg/m²/day × 5d（或 25 mg/m²/day × 6d）+ Mel 100–140 mg/m²（1–2d）+ TBI 2–4 Gy</td>
+              </tr>
+              <tr>
+                <td><strong>Flu + Mel + Thiotepa</strong></td>
+                <td>Flu 40 mg/m²/day × 4d + Mel 140 mg/m² × 1d + Thiotepa 10 mg/m² × 1d</td>
+              </tr>
+              <tr>
+                <td><strong>Flu + Bu + Thiotepa</strong></td>
+                <td>Thiotepa 5 mg/kg/day × 1d + Bu 130 mg/m²/day IV × 2d（約等於 3.2 mg/kg/d）+ Flu 30–40 mg/m²/day × 4d</td>
+              </tr>
+              <tr>
+                <td rowspan="2"><strong>RIC (UCB)</strong></td>
+                <td><strong>Flu + Cy + Thiotepa + TBI</strong></td>
+                <td>Flu 150 mg/m² + Cy 50 mg/kg + Thiotepa 10 mg/kg/day + TBI 4 Gy</td>
+              </tr>
+              <tr>
+                <td><strong>Flu + Cy + TBI</strong></td>
+                <td>Flu 200 mg/m² + Cy 50 mg/kg + TBI 2 Gy</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:12.5px;color:var(--text-muted);">*使用 PTCy 預防 GVHD 時，須審慎評估 Melphalan 與 TBI 劑量。</p>
+      </div>
+
+      <div class="tab-panel" id="cond-noflu">
+        <div class="callout warn">
+          <strong>Fludarabine 缺藥替代 RIC 方案 (HCT-A 5/10)：</strong>因缺乏與 Fludarabine 方案之直接比較數據，應依機構經驗選擇，並參考原發表文獻搭配 GVHD 預防。
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>骨幹藥物</th><th>方案範例</th><th>特殊注意事項</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Pentostatin-based</strong></td>
+                <td>Pentostatin + Bu；Pentostatin + Bu + Cy；Pentostatin + TBI 4 Gy</td>
+                <td>Pentostatin+TBI 4 Gy 曾用於植入失敗之二次移植。</td>
+              </tr>
+              <tr>
+                <td><strong>Clofarabine-based</strong></td>
+                <td>Clofarabine + Bu；Clofarabine + Mel ± Thiotepa；Clofarabine + TBI 2 Gy；Clofarabine + Cy + TBI 2 Gy (搭 PTCy)</td>
+                <td>曾報告<strong>全身性發炎反應症候群</strong>，併用類固醇可減輕風險。</td>
+              </tr>
+              <tr>
+                <td><strong>Cladribine-based</strong></td>
+                <td>Cladribine + Bu + ATG；Cladribine + Bu + TBI 2 Gy</td>
+                <td>使用 Bu ± TBI 2 Gy 可能伴隨<strong>植入失敗風險上升</strong>。</td>
+              </tr>
+              <tr>
+                <td><strong>Cyclophosphamide-based</strong></td>
+                <td>Cyclophosphamide + TBI 5.5 Gy</td>
+                <td>單次暴露 550 cGy TBI。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="cond-auto">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>疾病類型</th><th>常用自體調理療程 (HCT-A 6/10)</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>NHL（無 CNS 侵犯）或 HL</strong></td>
+                <td>
+                  • <strong>BEAM</strong> (Carmustine + Etoposide + Cytarabine + Melphalan)<br>
+                  • <strong>BEAC</strong> (Carmustine + Etoposide + Cytarabine + Cyclophosphamide)<br>
+                  • <strong>Carmustine + Thiotepa</strong>；<strong>Bu + Cy + Etoposide</strong><br>
+                  • <strong>TEAM</strong> (Thiotepa + Etoposide + Cytarabine + Melphalan)<br>
+                  • <strong>BeEAM</strong> (Bendamustine + Etoposide + Cytarabine + Melphalan)
+                </td>
+              </tr>
+              <tr>
+                <td><strong>原發 CNS 淋巴瘤 (PCNSL) 或 CNS NHL</strong></td>
+                <td>• <strong>Thiotepa + Busulfan + Cyclophosphamide (TBC)</strong><br>• <strong>Carmustine + Thiotepa</strong></td>
+              </tr>
+              <tr>
+                <td><strong>多發性骨髓瘤 / 漿細胞白血病</strong></td>
+                <td>
+                  • <strong>Melphalan 200 mg/m²</strong>（標準）<br>
+                  • <strong>Melphalan 70–140 mg/m²</strong>（精選病人：類澱粉沉積症、高齡、高 HCT-CI、低 KPS、CKD）<br>
+                  • <strong>Melphalan + Busulfan</strong>（高風險族群）
+                </td>
+              </tr>
+              <tr>
+                <td><strong>生殖細胞腫瘤 (Germ Cell Tumors)</strong></td>
+                <td>• <strong>Carboplatin + Etoposide</strong></td>
+              </tr>
+              <tr>
+                <td><strong>急性前骨髓細胞白血病 (APL)</strong></td>
+                <td>• <strong>Busulfan + Melphalan</strong>；<strong>Cy + TBI</strong>；<strong>Busulfan + Cy</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <h3>三、依體重調整調理化療劑量 (HCT-A 7/10) ＋ 🧮 調整體重計算機</h3>
+      <div class="box" style="border-left:4px solid var(--primary);margin-bottom:14px;">
+        <h4>🧮 互動式 25% / 40% 調整體重 (Adjusted Body Weight, ABW) 計算機</h4>
+        <div class="calc-grid">
+          <div class="calc-field">
+            <label for="abwActual">實際總體重 Total BW (kg)</label>
+            <input type="number" id="abwActual" value="85" min="20" max="250" step="0.5" />
+          </div>
+          <div class="calc-field">
+            <label for="abwIdeal">理想體重 Ideal BW (kg)</label>
+            <input type="number" id="abwIdeal" value="65" min="20" max="150" step="0.5" />
+          </div>
+        </div>
+        <div id="abwResult" class="callout ok" style="margin-bottom:0;"></div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>藥物</th><th>NCCN 建議體重／BSA 劑量調整原則 (HCT-A 7/10)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Busulfan</strong></td><td>成人 mg/kg 給藥：依 <strong>25% ABW</strong>；BSA 給藥或兒童：依總體重。<em>（SOS/VOD 風險與高 AUC 正相關）</em></td></tr>
+            <tr><td><strong>Carmustine (BCNU)</strong></td><td>成人依 BSA：TBW ≤120% IBW 依總體重；<strong>TBW &gt;120% IBW 依 25% ABW</strong>。<em>（多藥併用達 600 mg/m² 肺毒性 &gt;50%；單藥 MTD 1200 mg/m² 肺毒性 9.5%）</em></td></tr>
+            <tr><td><strong>Cyclophosphamide</strong></td><td><strong>Cy200</strong>：取 TBW 與 IBW 較小者；<strong>Cy120</strong>：TBW ≤120% IBW 可用 IBW 或 TBW，<strong>&gt;120% IBW 改用 25% ABW</strong>。</td></tr>
+            <tr><td><strong>Cytarabine</strong></td><td>成人與兒童皆依總體重計算 BSA 給藥。</td></tr>
+            <tr><td><strong>Etoposide</strong></td><td>mg/kg 給藥：依 <strong>25% ABW</strong>；BSA 給藥：依總體重。</td></tr>
+            <tr><td><strong>Fludarabine</strong></td><td>成人依總體重計算 BSA 給藥。</td></tr>
+            <tr><td><strong>Melphalan</strong></td><td>成人依總體重計算 BSA 給藥；年齡與腎功能調整尚無統一標準。</td></tr>
+            <tr><td><strong>Thiotepa</strong></td><td>TBW ≤120% IBW 依總體重 BSA；<strong>TBW &gt;120% IBW 依 40% ABW 計算 BSA</strong>。</td></tr>
+            <tr><td><strong>Treosulfan</strong> <span class="badge b-new">v1.2025</span></td><td>成人與兒童皆依<strong>總體重</strong>計算 BSA 給藥。</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 6. POST-TRANSPLANT FOLLOW-UP -->
+    <section class="card" id="followup">
+      <div class="sec-header">
+        <h2>🏥 移植後追蹤與早期／晚期併發症</h2>
+        <div class="sec-tags"><span class="code-tag">HCT-5</span><span class="code-tag">MS-9</span></div>
+      </div>
+
+      <div class="flow-row">
+        <div class="flow-step">
+          <div class="step-label">1. 調理與輸注</div>
+          依疾病別給予異體或自體調理 → 輸注造血幹細胞 → <strong>植入前全程給予密集支持照護</strong>。
+        </div>
+        <div class="flow-step">
+          <div class="step-label">2. 四大核心監測 (v1.2025)</div>
+          • <strong>GVHD</strong>（異體）→ 疑似即進 <a href="#agvhd">GVHD-1</a><br>
+          • <strong>感染</strong>（參見 NCCN CRI 指引）<br>
+          • <strong>多重器官功能障礙</strong>（心、肺、腎、肝）<br>
+          • <strong>疾病復發監測</strong>（所有 HCT 病人皆建議）
+        </div>
+        <div class="flow-step">
+          <div class="step-label">3. 肝臟 VOD/SOS 處置</div>
+          致命性肝臟併發症。<strong>Defibrotide</strong> 獲 FDA 核准用於 HCT 後合併<strong>腎或肺功能障礙</strong>之肝臟 VOD/SOS（非隨機試驗實證）。
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="box">
+          <h4>⏱️ 早期併發症（移植後 &lt;100 天）</h4>
+          <ul>
+            <li>持續血球低下／植入延遲或植入失敗</li>
+            <li>細菌、病毒（CMV 等）、黴菌感染</li>
+            <li>肝臟靜脈閉塞／肝竇阻塞症候群 (VOD/SOS)</li>
+            <li>器官毒性：心肌病變、特發性肺炎症候群 (IPS)</li>
+            <li>急性 GVHD（異體）</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h4>📆 晚期併發症（移植後 &gt;100 天）</h4>
+          <ul>
+            <li>慢性 GVHD（異體 NRM 首要死因）與感染</li>
+            <li>晚期放療／化療毒性：白內障、甲狀腺低下、心衰竭</li>
+            <li>內分泌異常、骨質疏鬆與不孕</li>
+            <li><strong>次發性惡性腫瘤</strong>：治療相關骨髓腫瘤 <a class="who-pill" href="https://lichiahans.github.io/who5-hematolymphoid-guide/#ch2-sec-pct" target="_blank" rel="noopener">🌳 WHO5 細胞毒後骨髓腫瘤 ↗</a>、乳癌、甲狀腺癌、黑色素瘤／非黑色素瘤皮膚癌、口腔鱗狀細胞癌</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. ACUTE GVHD -->
+    <section class="card" id="agvhd">
+      <div class="sec-header">
+        <h2>🛡️ 急性 GVHD (aGVHD)：診斷、分期分級與一線治療</h2>
+        <div class="sec-tags"><span class="code-tag">GVHD-1</span><span class="code-tag">GVHD-2/3</span><span class="code-tag">GVHD-A</span></div>
+      </div>
+
+      <h3>一、診斷與切片原則 (GVHD-1, MS-10)</h3>
+      <ul>
+        <li><strong>排除非 GVHD 原因</strong>：糞便感染檢測、腹部超音波／CT、病毒再活化檢測（如 CMV），排除藥物毒性、感染與 VOD/SOS。</li>
+        <li><strong>器官導向切片（盡可能於升級全身免疫抑制前取得病理證實）</strong>：
+          <ul>
+            <li>皮膚疹：考慮可疑處皮膚切片（敏感度非絕對但可助排除其他病因）。</li>
+            <li>腹瀉／噁心嘔吐：上／下消化道內視鏡切片；<strong>直腸乙狀結腸切片 (rectosigmoid biopsy)</strong> 無論症狀為腹瀉或上消化道，敏感度與陰性預測值皆最高。</li>
+            <li>肝功能異常：若僅有轉胺酶或膽紅素上升且無他處 aGVHD 證據，考慮<strong>肝切片</strong>（血小板低下或凝血異常優先採<strong>經頸靜脈途徑 transjugular</strong>）。</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>二、🧮 急性 GVHD 分期與分級互動計算機 (MAGIC 標準)</h3>
+      <div class="box" style="border-left:4px solid var(--primary);margin-bottom:14px;">
+        <div class="calc-grid">
+          <div class="calc-field">
+            <label for="agSkin">皮膚 (活動性紅斑 BSA)</label>
+            <select id="agSkin">
+              <option value="0">Stage 0：無活動性紅斑疹</option>
+              <option value="1">Stage 1：斑丘疹 &lt;25% BSA</option>
+              <option value="2">Stage 2：斑丘疹 25–50% BSA</option>
+              <option value="3">Stage 3：斑丘疹 &gt;50% BSA</option>
+              <option value="4">Stage 4：全身紅皮症 (&gt;50%) 併水泡及脫屑 &gt;5% BSA</option>
+            </select>
+          </div>
+          <div class="calc-field">
+            <label for="agLiver">肝臟 (總膽紅素)</label>
+            <select id="agLiver">
+              <option value="0">Stage 0：&lt;2 mg/dL</option>
+              <option value="1">Stage 1：2–3 mg/dL</option>
+              <option value="2">Stage 2：3.1–6 mg/dL</option>
+              <option value="3">Stage 3：6.1–15 mg/dL</option>
+              <option value="4">Stage 4：&gt;15 mg/dL</option>
+            </select>
+          </div>
+          <div class="calc-field">
+            <label for="agUgi">上消化道 (Upper GI)</label>
+            <select id="agUgi">
+              <option value="0">Stage 0：無或間歇性噁心／嘔吐／厭食</option>
+              <option value="1">Stage 1：持續性噁心、嘔吐或厭食</option>
+            </select>
+          </div>
+          <div class="calc-field">
+            <label for="agLgi">下消化道 (成人腹瀉量/次)</label>
+            <select id="agLgi">
+              <option value="0">Stage 0：&lt;500 mL/日 或 &lt;3 次/日</option>
+              <option value="1">Stage 1：500–999 mL/日 或 3–4 次/日</option>
+              <option value="2">Stage 2：1000–1500 mL/日 或 5–7 次/日</option>
+              <option value="3">Stage 3：&gt;1500 mL/日 或 &gt;7 次/日</option>
+              <option value="4">Stage 4：劇烈腹痛 (± 腸阻塞) 或明顯血便 (不論量)</option>
+            </select>
+          </div>
+        </div>
+        <div id="agvhdResult" class="callout" style="margin-bottom:0;"></div>
+      </div>
+
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="ag-magic">MAGIC 標準 (GVHD-A 2/2)</button>
+        <button class="tab-btn" data-tab="ag-gluck">Modified Glucksberg / Keystone (GVHD-A 1/2)</button>
+      </div>
+      <div class="tab-panel active" id="ag-magic">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Stage</th><th>皮膚 (僅計活動性紅斑)</th><th>肝臟 (膽紅素)</th><th>上消化道</th><th>下消化道 (每日糞便量)</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>0</strong></td><td>無活動性紅斑</td><td>&lt;2 mg/dL</td><td>無或間歇性噁心/嘔吐/厭食</td><td>成人 &lt;500 mL 或 &lt;3 次；兒童 &lt;10 mL/kg 或 &lt;4 次</td></tr>
+              <tr><td><strong>1</strong></td><td>斑丘疹 &lt;25% BSA</td><td>2–3 mg/dL</td><td>持續性噁心、嘔吐或厭食</td><td>成人 500–999 mL 或 3–4 次；兒童 10–19.9 mL/kg 或 4–6 次</td></tr>
+              <tr><td><strong>2</strong></td><td>斑丘疹 25–50% BSA</td><td>3.1–6 mg/dL</td><td>—</td><td>成人 1000–1500 mL 或 5–7 次；兒童 20–30 mL/kg 或 7–10 次</td></tr>
+              <tr><td><strong>3</strong></td><td>斑丘疹 &gt;50% BSA</td><td>6.1–15 mg/dL</td><td>—</td><td>成人 &gt;1500 mL 或 &gt;7 次；兒童 &gt;30 mL/kg 或 &gt;10 次</td></tr>
+              <tr><td><strong>4</strong></td><td>全身紅皮症 (&gt;50%) ＋ 水泡及脫屑 &gt;5% BSA</td><td>&gt;15 mg/dL</td><td>—</td><td>劇烈腹痛 (± 腸阻塞) 或明顯血便（不論排便量）</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:13px;"><strong>MAGIC 整體分級：</strong><strong>Grade I</strong> = 皮膚 1–2 且無肝/上下消化道；<strong>Grade II</strong> = 皮膚 3 及/或 肝 1 及/或 上 GI 1 及/或 下 GI 1；<strong>Grade III</strong> = 肝 2–3 及/或 下 GI 2–3（皮膚 0–3、上 GI 0–1）；<strong>Grade IV</strong> = 皮膚/肝/下 GI 任一達 Stage 4。</p>
+      </div>
+      <div class="tab-panel" id="ag-gluck">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Stage / Grade</th><th>皮膚 (九分法)</th><th>肝臟 (總膽紅素)</th><th>腸道 (成人)</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>Stage 1</strong></td><td>&lt;25% 皮膚疹</td><td>2–3 mg/dL</td><td>腹瀉 &gt;500 mL/日 或持續噁心（併胃/十二指腸切片證實）</td></tr>
+              <tr><td><strong>Stage 2</strong></td><td>25–50% 皮膚疹</td><td>3–6 mg/dL</td><td>腹瀉 &gt;1000 mL/日</td></tr>
+              <tr><td><strong>Stage 3</strong></td><td>&gt;50% 皮膚疹</td><td>6–15 mg/dL</td><td>腹瀉 &gt;1500 mL/日</td></tr>
+              <tr><td><strong>Stage 4</strong></td><td>全身紅皮症併水泡</td><td>&gt;15 mg/dL</td><td>劇烈腹痛併或不併腸阻塞</td></tr>
+              <tr><td><strong>Grade I / II / III / IV</strong></td><td colspan="3"><strong>I</strong>：皮膚 1–2、無肝腸；<strong>II</strong>：皮膚 3 / 肝 1 / 腸 1；<strong>III</strong>：肝 2–3 / 腸 2–4；<strong>IV</strong>：皮膚 4 / 肝 4（或較輕器官侵犯但體能極度惡化）。<em>若有其他確切病因造成膽紅素上升或腹瀉，該器官降 1 期。</em></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <h3>三、急性 GVHD 一線治療流程 (GVHD-2, GVHD-3)</h3>
+      <div class="grid-2">
+        <div class="box">
+          <h4>🟢 Grade I aGVHD（僅皮膚 Stage 1–2, &lt;50% BSA 非水泡疹）</h4>
+          <ul>
+            <li><strong>處置</strong>：維持或重啟原免疫抑制劑 ＋ <strong>局部類固醇</strong>（中至高效價如 triamcinolone、clobetasol；<strong>臉部與皺褶處限用低效價 hydrocortisone</strong>）及/或局部 tacrolimus，直到皮疹消退（搔癢可用抗組織胺）；若無症狀且穩定亦可觀察。</li>
+            <li><strong>反應追蹤</strong>：
+              <ul>
+                <li><strong>緩解</strong> → 依臨床可行性逐步減量免疫抑制劑。</li>
+                <li><strong>無反應</strong> → 臨床試驗或持續局部類固醇。</li>
+                <li><strong>惡化或有症狀</strong>（搔癢、疼痛、脫皮、BSA 擴大）→ 升級按 <strong>Grade II–IV</strong> 治療。</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="box">
+          <h4>🔴 Grade II–IV aGVHD（中至重度）</h4>
+          <ul>
+            <li><strong>先決步驟</strong>：維持、重啟或調升原免疫抑制劑至治療血中濃度（若於減藥期間發作）。</li>
+            <li><strong>一線選擇</strong>：臨床試驗，或<strong>系統性類固醇 ± 局部類固醇</strong>：
+              <ul>
+                <li><strong>僅上消化道</strong>：<strong>0.5–1 mg/kg/day</strong> methylprednisolone (MP) + 口服腸道局部類固醇（beclomethasone ± budesonide；<em>註：budesonide 對上消化道效果較差</em>）。</li>
+                <li><strong>皮膚／下消化道／肝臟</strong>：<strong>1–2 mg/kg/day</strong> MP ± 局部類固醇（Grade II 可考慮 1 mg/kg；<strong>MP 劑量超過 2 mg/kg/day 無額外益處</strong>）。</li>
+                <li><strong>標準風險 aGVHD</strong>（依臨床風險與生物標記定義，BMT CTN 1501）：可考慮單用 <strong>Sirolimus</strong> 替代類固醇（高血糖與感染較少，但 TMA 較高 10% vs 1.6%）。</li>
+              </ul>
+            </li>
+            <li><strong>重要原則</strong>：除臨床試驗外，<strong>不應於一線常規合併其他全身性藥物</strong>。無反應即進入<a href="#sr-gvhd">類固醇難治性 GVHD (GVHD-E)</a>。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. CHRONIC GVHD -->
+    <section class="card" id="cgvhd">
+      <div class="sec-header">
+        <h2>🩺 慢性 GVHD (cGVHD)：診斷標準、NIH 分級與一線治療</h2>
+        <div class="sec-tags"><span class="code-tag">GVHD-4</span><span class="code-tag">GVHD-B</span><span class="code-tag">GVHD-C</span></div>
+      </div>
+
+      <h3>一、慢性 GVHD 診斷表徵精要 (NIH 2014, GVHD-B 1–3)</h3>
+      <p>具備任一項 <strong>Diagnostic（具診斷性）</strong> 表徵即可確立 cGVHD 診斷（<strong>不強制切片</strong>）；若僅有 <strong>Distinctive（特徵性）</strong> 表徵則不足以單獨確診，須切片或佐證並排除感染、藥物與惡性腫瘤。</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>器官</th><th>具診斷性 (Diagnostic — 足以確診)</th><th>特徵性 (Distinctive — 不足單獨確診)</th><th>共通／其他表徵</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>皮膚</strong></td><td>皮膚異色症 (Poikiloderma)、扁平苔癬樣、硬化 (Sclerotic)、硬斑樣 (Morphea-like)、硬化性苔癬樣</td><td>色素脫失、丘疹鱗屑病灶</td><td>共通：紅斑、斑丘疹、搔癢；其他：排汗障礙、魚鱗癬、毛孔角化、色素增減</td></tr>
+            <tr><td><strong>指甲／毛髮</strong></td><td>—</td><td>指甲失養、縱脊/脆裂、甲剝離、翼狀胬肉、對稱掉甲；化放療恢復後新發瘢痕/非瘢痕禿髮、體毛脫落、脫屑</td><td>頭髮稀疏粗糙無光澤、早發白髮</td></tr>
+            <tr><td><strong>口腔</strong></td><td>扁平苔癬樣變化 (Lichen planus-like)</td><td>口乾、黏液囊腫、黏膜萎縮、潰瘍、偽膜</td><td>共通：牙齦炎、黏膜炎、紅斑、疼痛</td></tr>
+            <tr><td><strong>眼睛</strong></td><td>—</td><td>新發乾眼/異物感/眼痛、瘢痕性結膜炎、乾燥性角結膜炎 (KCS)、融合性點狀角膜病變</td><td>畏光、眼周色素沉澱、眼瞼炎</td></tr>
+            <tr><td><strong>生殖器</strong></td><td>扁平苔癬樣、硬化性苔癬樣、陰道瘢痕/陰唇沾黏、包莖或尿道口狹窄</td><td>糜爛、裂傷、潰瘍</td><td>—</td></tr>
+            <tr><td><strong>消化道</strong></td><td>食道蹼 (Esophageal web)、食道上至中 1/3 狹窄</td><td>—</td><td>共通：厭食、噁心嘔吐、腹瀉、體重減輕；其他：胰臟外分泌不足</td></tr>
+            <tr><td><strong>肝臟</strong></td><td>—</td><td>—</td><td>共通：Total Bilirubin、ALP 或 ALT &gt; 2× ULN</td></tr>
+            <tr><td><strong>肺臟</strong></td><td>肺切片證實閉塞性細支氣管炎；或符合 <strong>BOS 診斷標準</strong>（須合併他處特徵性 cGVHD）</td><td>胸部 CT 見空氣滯留 (air trapping) 與支氣管擴張</td><td>隱源性器質化肺炎 (COP)、限制性肺病</td></tr>
+            <tr><td><strong>肌肉／筋膜／關節</strong></td><td>筋膜炎 (Fasciitis)、繼發於筋膜炎或硬化之關節僵硬／攣縮</td><td>肌炎或多發性肌炎（確診 cGVHD 須切片）</td><td>水腫、抽筋、關節痛/炎；<strong>血液免疫/其他</strong>：血小板低下、嗜伊紅球增多、AIHA/ITP、漿膜積液、周邊神經病變、腎病症候群、重症肌無力</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout info">
+        <strong>🫁 閉塞性細支氣管炎候群 (BOS) 診斷 4 要件 (GVHD-B 2/3)：</strong>
+        (1) <strong>FEV1/VC &lt;0.7</strong> 或低於第 5 百分位；
+        (2) <strong>FEV1 &lt;75% 預測值且 2 年內下降 ≥10%</strong>（吸入支氣管擴張劑後仍未回復 &gt;75% 且絕對降幅維持 ≥10%）；
+        (3) 排除呼吸道感染；
+        (4) 具備任一佐證（呼氣相 CT 見空氣滯留/小氣道增厚/支氣管擴張，或 PFT 見 RV &gt;120% 預測值或 RV/TLC 超過 90% CI）。<em>*若已於他處確診 cGVHD，僅須符合前 3 項即可確認肺部侵犯。</em>
+      </div>
+
+      <h3>二、🧮 慢性 GVHD NIH 整體嚴重度互動計算機 (GVHD-C 1–4)</h3>
+      <div class="box" style="border-left:4px solid var(--primary);margin-bottom:14px;">
+        <p style="font-size:13px;margin-top:0;color:var(--text-muted);">依 NIH 2014 規則：皮膚取 BSA 與硬化較高分；肺部以 <strong>FEV1 分數</strong>優先於症狀分數；若器官異常完全由非 GVHD 確切病因造成則不計分（選 0）；多因素造成則不降級。</p>
+        <div class="calc-grid">
+          <div class="calc-field">
+            <label for="cgSkin">皮膚 (BSA / 硬化取高者)</label>
+            <select id="cgSkin">
+              <option value="0">0：無侵犯</option>
+              <option value="1">1：1–18% BSA，無硬化</option>
+              <option value="2">2：19–50% BSA 或表淺硬化(可捏起)</option>
+              <option value="3">3：&gt;50% BSA 或深層硬化/活動受限/潰瘍</option>
+            </select>
+          </div>
+          <div class="calc-field">
+            <label for="cgMouth">口腔</label>
+            <select id="cgMouth">
+              <option value="0">0：無症狀</option>
+              <option value="1">1：輕度，不顯著影響進食</option>
+              <option value="2">2：中度，部分限制進食</option>
+              <option value="3">3：重度，嚴重限制進食</option>
+            </select>
+          </div>
+          <div class="calc-field">
+            <label for="cgEyes">眼睛 (KCS)</label>
+            <select id="cgEyes">
+              <option value="0">0：無症狀</option>
+              <option value="1">1：輕度乾眼 (人工淚液 ≤3 次/日)</option>
+              <option value="2">2：中度 (&gt;3 次/日或淚點栓，無視力受損)</option>
+              <option value="3">3：重度 (影響日常/無法工作/視力喪失)</option>
+            </select>
+          </div>
+          <div class="calc-field">
+            <label for="cgGi">消化道 (3 個月內體重)</label>
+            <select id="cgGi">
+              <option value="0">0：無症狀</option>
+              <option value="1">1：體重減輕 &lt;5%</option>
+              <option value="2">2：體重減輕 5–15% 或中度腹瀉</option>
+              <option value="3">3：體重減輕 &gt;15% / 須營養品或食道擴張 / 嚴重腹瀉</option>
+            </select>
+          </div>
+          <div class="calc-field">
+            <label for="cgLiver">肝臟</label>
+            <select id="cgLiver">
+              <option value="0">0：膽紅素正常且 ALT/ALP &lt;3× ULN</option>
+              <option value="1">1：膽紅素正常，ALT 3–5× 或 ALP ≥3× ULN</option>
+              <option value="2">2：膽紅素升高但 ≤3 mg/dL 或 ALT &gt;5× ULN</option>
+              <option value="3">3：總膽紅素 &gt;3 mg/dL</option>
+            </select>
+          </div>
+          <div class="calc-field">
+            <label for="cgLung">肺臟 (FEV1 優先)</label>
+            <select id="cgLung">
+              <option value="0">0：FEV1 ≥80%（無症狀）</option>
+              <option value="1">1：FEV1 60–79%（爬一層樓喘）</option>
+              <option value="2">2：FEV1 40–59%（平地走路喘）</option>
+              <option value="3">3：FEV1 ≤39%（休息即喘／需氧氣）</option>
+            </select>
+          </div>
+          <div class="calc-field">
+            <label for="cgJoint">關節與筋膜 (P-ROM)</label>
+            <select id="cgJoint">
+              <option value="0">0：無症狀</option>
+              <option value="1">1：輕微緊繃，不影響日常活動</option>
+              <option value="2">2：緊繃／攣縮／筋膜炎紅斑，輕中度影響日常</option>
+              <option value="3">3：嚴重攣縮與日常活動受限 (無法穿衣繫鞋帶)</option>
+            </select>
+          </div>
+          <div class="calc-field">
+            <label for="cgGenital">生殖道</label>
+            <select id="cgGenital">
+              <option value="0">0：無徵象</option>
+              <option value="1">1：輕度徵象</option>
+              <option value="2">2：中度徵象</option>
+              <option value="3">3：重度徵象</option>
+            </select>
+          </div>
+        </div>
+        <div id="cgvhdResult" class="callout" style="margin-bottom:0;"></div>
+      </div>
+
+      <h3>三、慢性 GVHD 一線治療流程 (GVHD-4)</h3>
+      <div class="grid-2">
+        <div class="box">
+          <h4>💊 全身與局部一線方案</h4>
+          <ul>
+            <li>鼓勵參加臨床試驗；強烈建議<strong>跨專科團隊照護</strong>以避免器官損傷與保存功能。</li>
+            <li><strong>維持或重啟原免疫抑制劑</strong>，及／或給予：
+              <ul>
+                <li><strong>系統性類固醇</strong>：<strong>0.5–1 mg/kg/day</strong> methylprednisolone（或等效 prednisone）。</li>
+                <li>或 <strong>Sirolimus + prednisone</strong> <span class="badge b-new">v1.2025 新增</span>。</li>
+              </ul>
+            </li>
+            <li><strong>± 局部治療</strong>：中高效價局部類固醇（臉部/皺褶用低效價 hydrocortisone）、局部雌激素（陰道 cGVHD）、局部 tacrolimus、dexamethasone 漱口水。</li>
+            <li><strong>反應後</strong>：依臨床可行性逐步減量類固醇；若無反應則進<a href="#sr-gvhd">類固醇難治性 cGVHD (GVHD-E)</a>。</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h4>🫁 肺部慢性 GVHD (BOS) 專屬方案</h4>
+          <ul>
+            <li><strong>FAM 三合一治療</strong> <span class="badge b-new">v1.2025 改為明確併用 +</span>：<strong>吸入性類固醇</strong>（fluticasone 或 budesonide）<strong>+ Azithromycin + Montelukast</strong>。</li>
+            <li>發病時及後續視臨床需求定期追蹤 <strong>PFT</strong>。</li>
+            <li>若經 <strong>2–3 線治療仍持續惡化</strong>，可評估<strong>肺臟移植</strong>。</li>
+          </ul>
+          <div class="callout danger" style="margin-bottom:0;">
+            <strong>🚨 Azithromycin 重大警語 (Footnote v)：</strong>Azithromycin <strong>僅可用於治療 BOS，切勿用於預防 BOS</strong>！隨機試驗顯示預防性使用與<strong>白血病復發及次發性腫瘤風險上升</strong>相關。
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. STEROID-REFRACTORY GVHD -->
+    <section class="card" id="sr-gvhd">
+      <div class="sec-header">
+        <h2>💊 類固醇難治性 GVHD：定義與系統性治療藥物</h2>
+        <div class="sec-tags"><span class="code-tag">GVHD-D</span><span class="code-tag">GVHD-E</span></div>
+      </div>
+
+      <h3>一、類固醇反應不良定義 (EBMT–NIH–CIBMTR 標準, GVHD-D 1/2)</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>分類</th><th>急性 GVHD (aGVHD)</th><th>慢性 GVHD (cGVHD)</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>類固醇難治／抗藥<br>(Refractoriness)</strong></td>
+              <td>• 使用 ≥2 mg/kg/day prednisone 後 <strong>3–5 天內惡化</strong>；或<br>• 治療開始 <strong>5–7 天內無改善</strong>；或<br>• 含類固醇免疫抑制治療 <strong>&gt;28 天仍未完全緩解</strong>。</td>
+              <td>• 使用 ≥1 mg/kg/day prednisone <strong>1–2 週仍惡化</strong>；或<br>• 使用 ≥0.5 mg/kg/day（或隔日 1 mg/kg）<strong>1–2 個月疾病持平無改善</strong>。</td>
+            </tr>
+            <tr>
+              <td><strong>類固醇依賴<br>(Dependence)</strong></td>
+              <td>無法將 prednisone 減量至 &lt;2 mg/kg/day，或減藥過程中 aGVHD 復發。</td>
+              <td>至少兩次間隔 ≥8 週的嘗試，皆無法將 prednisone 減量至 <strong>&lt;0.25 mg/kg/day</strong>（或隔日 &gt;0.5 mg/kg）。</td>
+            </tr>
+            <tr>
+              <td><strong>類固醇不耐受</strong></td>
+              <td colspan="2">因使用皮質類固醇而出現無法接受之毒性反應。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>二、類固醇難治性 GVHD 系統性藥物速查 (GVHD-E 1/3 &amp; Discussion)</h3>
+      <p>約 40%–50% 的急／慢性 GVHD 會演變為類固醇難治，死亡率高，強烈鼓勵參與臨床試驗。以下藥物通常與類固醇併用（若確認類固醇無效則逐步減停）：</p>
+
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="sr-acute">🛡️ 類固醇難治性 急性 GVHD</button>
+        <button class="tab-btn" data-tab="sr-chronic">🩺 類固醇難治性 慢性 GVHD</button>
+        <button class="tab-btn" data-tab="sr-resp">📊 cGVHD 器官療效標準 (GVHD-D 2/2)</button>
+      </div>
+
+      <div class="tab-panel active" id="sr-acute">
+        <div class="callout ok">
+          <strong>🏆 FDA 核准 Category 1 首選藥物：Ruxolitinib (JAK1/2 抑制劑)</strong> <span class="badge b-cat1">Category 1</span><br>
+          • <strong>核准對象</strong>：≥12 歲成人及兒童類固醇難治性 aGVHD（常用 10 mg BID）。<br>
+          • <strong>關鍵實證 (REACH2 三期)</strong>：Day 28 ORR <strong>62% vs 39%</strong> (P&lt;.001)，Day 56 持續 ORR 40% vs 22%，中位 FFS 5 vs 1 個月。常見副作用：血小板低下 (33%)、貧血 (30%)、CMV 感染 (26%)。
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>替代藥物 (依字母排序)</th><th>機轉與關鍵臨床重點 (Discussion MS-14~20)</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Alemtuzumab</strong></td><td>抗 CD52 單株抗體；ORR 70–83%，但感染率高 (&gt;75%)，須積極抗感染預防與監測。</td></tr>
+              <tr><td><strong>Alpha-1 antitrypsin (AAT)</strong></td><td>絲胺酸蛋白酶抑制劑；IV 60 mg/kg/d 每週兩次 × 4 週，Day 28 ORR 65% (CR 35%)，無明顯 3–4 級藥物毒性。</td></tr>
+              <tr><td><strong>ATG (兔／馬源不可互換)</strong></td><td>T 細胞清除抗體；對<strong>皮膚 aGVHD</strong> 反應最佳 (61–96%)，肝臟較差，長期存活偏低且感染率高。</td></tr>
+              <tr><td><strong>Basiliximab</strong></td><td>抗 IL-2R 單株抗體；20 mg IV D1 &amp; D4，ORR 83%，皮膚/腸道反應佳，感染率 65%。</td></tr>
+              <tr><td><strong>CNIs (Tacrolimus / Cyclosporine)</strong></td><td>尤其適用於原先預防或一線未使用 CNI 者；注意腎毒性、高血壓、低血鎂與震顫。</td></tr>
+              <tr><td><strong>Etanercept</strong></td><td>TNF-α 受體融合蛋白；25 mg SC BIW × 4w → QW × 4w，腸道侵犯反應較佳。</td></tr>
+              <tr><td><strong>體外光分離術 (ECP)</strong></td><td>統合分析 ORR 69–71%，<strong>皮膚反應最高 (84–86%)</strong>，治療相關死亡極低。<em>若無 ECP，皮膚/硬化型可改用 PUVA。</em></td></tr>
+              <tr><td><strong>Infliximab</strong></td><td>抗 TNF-α 單株抗體；10 mg/kg QW，ORR 40–67%，但嚴重細菌/黴菌/病毒感染風險極高 (72–83%)。</td></tr>
+              <tr><td><strong>mTOR 抑制劑 (Sirolimus)</strong></td><td>併用 tacrolimus 須警戒 <strong>TMA (21–36%)</strong>、高血脂、血球低下與腎毒性。</td></tr>
+              <tr><td><strong>Mycophenolate mofetil (MMF)</strong></td><td>ORR 31–48%，對較低分級 (Grade I–II) aGVHD 之 CR 率較高 (40% vs 8%)。</td></tr>
+              <tr><td><strong>Pentostatin</strong></td><td>嘌呤類似物；<strong>對肝臟 GVHD 無效</strong>，且<strong>腎不全者易過量暴露</strong>，治療中須嚴密監測腎功能。</td></tr>
+              <tr><td><strong>Tocilizumab</strong></td><td>抗 IL-6R 單株抗體（生物相似藥可替代）；8 mg/kg q2w 對皮膚與下消化道反應佳，肝臟無反應。</td></tr>
+              <tr><td><strong>uhCG/EGF</strong> <span class="badge b-new">v1.2025 新增</span></td><td>尿液來源人類絨毛膜促性腺激素／表皮生長因子，二期試驗顯示對危及生命之 aGVHD 具黏膜修復與免疫調節活性。</td></tr>
+              <tr><td><strong>Vedolizumab</strong></td><td>抗 α4β7 整合素單株抗體；專攻<strong>腸道 aGVHD</strong>，二線早期使用 ORR 高且較易停用免疫抑制劑。</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="sr-chronic">
+        <div class="callout ok">
+          <strong>🏆 FDA 核准 Category 1 首選藥物：Ruxolitinib</strong> <span class="badge b-cat1">Category 1</span><br>
+          • <strong>核准對象</strong>：≥12 歲，1–2 線系統性治療失敗之 cGVHD（10 mg BID）。<br>
+          • <strong>關鍵實證 (REACH3 三期)</strong>：Wk 24 ORR <strong>50% vs 26%</strong> (P&lt;.001)，中位 FFS <strong>&gt;19 vs 6 個月</strong> (HR 0.37)，症狀反應 24% vs 11%。常見 3 級以上副作用：血小板低下 (15%)、貧血 (13%)。
+        </div>
+
+        <h4>⭐ 其他 FDA 核准藥物（依核准日期排序）</h4>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>藥物</th><th>FDA 核准適應症</th><th>關鍵試驗與安全警語</th></tr></thead>
+            <tbody>
+              <tr>
+                <td><strong>Ibrutinib</strong> (BTK/ITK 抑制劑)</td>
+                <td>≥1 歲，≥1 線系統性治療失敗之 cGVHD（成人 420 mg QD）。</td>
+                <td>ORR 67–69% (CR 31%)，64% 類固醇減至 &lt;0.15 mg/kg/d。<strong>警語</strong>：心律不整／心房顫動病史與出血風險者慎用；<strong>手術前後須停藥 3–7 天</strong>。</td>
+              </tr>
+              <tr>
+                <td><strong>Belumosudil</strong> (ROCK2 抑制劑)</td>
+                <td>≥12 歲，≥2 線系統性治療失敗之 cGVHD（200 mg QD 或 BID）。</td>
+                <td><strong>ROCKstar 二期</strong>：ORR <strong>76%</strong> (CR 5%)，所有器官<strong>包含肺部 GVHD</strong> 皆有反應，中位反應持續 54 週，耐受性佳。</td>
+              </tr>
+              <tr>
+                <td><strong>Axatilimab-csfr</strong> (抗 CSF-1R 抗體) <span class="badge b-new">2024/08 核准</span></td>
+                <td>體重 ≥40 kg，≥2 線系統性治療失敗之 cGVHD（0.3 mg/kg IV q2w）。</td>
+                <td><strong>AGAVE-201 二期</strong>：0.3 mg/kg 組 ORR <strong>74%</strong> 最佳且副作用最少（60% 於 12 個月維持反應）；常見頭痛、LFT/CPK 上升、感染。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4>📋 其他替代藥物（依字母排序，Discussion MS-21~27）</h4>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>藥物</th><th>臨床特色與注意事項</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Abatacept</strong></td><td>CTLA-4 Ig 共同刺激阻斷劑；PR 44%，類固醇減量 51%，口腔/腸道/關節/皮膚/眼/肺皆改善。</td></tr>
+              <tr><td><strong>Alemtuzumab</strong></td><td>抗 CD52；ORR 70%（皮下低劑量併 Rituximab 亦有效），感染與血液毒性高。</td></tr>
+              <tr><td><strong>CNIs (Tacrolimus / Cyclosporine)</strong></td><td>皮膚、肝臟、腸道反應較佳；肌肉骨骼與肺部效果有限；注意腎毒性與高血壓。</td></tr>
+              <tr><td><strong>Etanercept</strong></td><td>對<strong>肺部 cGVHD（特別是 BOS）</strong>有 32% 肺功能 (FEV1/FVC ≥10%) 改善。</td></tr>
+              <tr><td><strong>體外光分離術 (ECP)</strong></td><td>統合 ORR 64%，<strong>皮膚與硬化病灶反應最佳 (74%)</strong>，安全性極高；無 ECP 時皮膚/硬化可用 PUVA。</td></tr>
+              <tr><td><strong>Hydroxychloroquine</strong></td><td>ORR 53%（皮膚/口腔/肝佳）；<strong>長期使用 (&gt;2 年) 有視網膜毒性失明風險</strong>，須定期眼科檢查。</td></tr>
+              <tr><td><strong>Imatinib (低劑量 200 mg QD)</strong></td><td>抑制 PDGFR 抗纖維化；對<strong>皮膚硬化與關節活動度 (ROM)</strong> 改善顯著（79% 病人 ROM 進步）。</td></tr>
+              <tr><td><strong>低劑量 Interleukin-2 (IL-2)</strong></td><td>1×10⁶ IU/m² SC QD 擴增 Treg；ORR 61%，多器官持久緩解且長期使用安全。</td></tr>
+              <tr><td><strong>低劑量 Methotrexate</strong></td><td>5–10 mg/m²/週；ORR 75–92%，對<strong>皮膚與口腔</strong>效果顯著，可逆性血球低下。</td></tr>
+              <tr><td><strong>mTOR 抑制劑 (Sirolimus)</strong></td><td>ORR 63–81%（硬化皮膚 73%、口腔 75%）；併用 CNI 增腎毒性 (33%) 與 TMA 風險。</td></tr>
+              <tr><td><strong>Mycophenolate mofetil (MMF)</strong></td><td>500 mg–1 g BID；ORR 75–77%（皮膚/口腔佳），常見腹絞痛與感染。</td></tr>
+              <tr><td><strong>Pentostatin</strong></td><td>4 mg/m² IV q2w；ORR 55%（苔癬樣皮膚 69%、口腔 62%，肝臟較差），注意腎毒性與感染。</td></tr>
+              <tr><td><strong>Rituximab</strong></td><td>抗 CD20（生物相似藥可替代）；375 mg/m² QW × 4–8 週，統合 ORR 66%（<strong>皮膚 60% 最佳</strong>），類固醇可減量 75–86%。</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="sr-resp">
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>器官</th><th>完全反應 (CR)</th><th>部分反應 (PR)</th><th>疾病惡化 (Progression)</th></tr></thead>
+            <tbody>
+              <tr><td><strong>皮膚／眼睛／食道／上或下 GI</strong></td><td>原有侵犯降至 NIH Score 0</td><td>NIH Score 下降 ≥1 分</td><td>NIH Score 上升 ≥1 分（0 → 1 除外）</td></tr>
+              <tr><td><strong>口腔</strong></td><td>NIH 改良口腔黏膜評分降至 0</td><td>下降 ≥2 分</td><td>上升 ≥2 分</td></tr>
+              <tr><td><strong>肝臟</strong></td><td>ALT、ALP、Total Bilirubin 全回復正常</td><td>數值下降 50%</td><td>上升達 2× ULN</td></tr>
+              <tr><td><strong>肺臟</strong></td><td>%FEV1 回復正常（無 PFT 則症狀分降至 0）</td><td>%FEV1 絕對預測值上升 ≥10%（或症狀分降 ≥1）</td><td>%FEV1 絕對預測值下降 ≥10%（或症狀分升 ≥1，0→1 除外）</td></tr>
+              <tr><td><strong>關節與筋膜</strong></td><td>NIH 分數 0 且 P-ROM 滿分 25</td><td>NIH 降 ≥1 分，或任一部位 P-ROM 升 ≥1 分</td><td>NIH 升 ≥1 分，或任一部位 P-ROM 降 ≥1 分</td></tr>
+              <tr><td><strong>整體 (Global)</strong></td><td>醫師整體嚴重度評分 0</td><td>0–10 分量表下降 ≥2 分</td><td>0–10 分量表上升 ≥2 分</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. GVHD SUPPORTIVE CARE -->
+    <section class="card" id="supportive">
+      <div class="sec-header">
+        <h2>🩹 GVHD 支持性照護 (GVHD Supportive Care)</h2>
+        <div class="sec-tags"><span class="code-tag">GVHD-F (1–2)</span></div>
+      </div>
+
+      <div class="grid-3">
+        <div class="box">
+          <h4>🌐 所有 GVHD 病人共通照護</h4>
+          <ul>
+            <li><strong>抗感染預防</strong>：隨免疫抑制升級調整預防用藥（參見 NCCN CRI 指引）。</li>
+            <li><strong>病毒監測</strong>：定期監測 <strong>CMV 再活化</strong>，必要時監測其他病毒。</li>
+            <li><strong>疫苗原則</strong>：
+              <ul>
+                <li>免疫抑制中或活動性 GVHD <strong>禁用活性減毒疫苗</strong>。</li>
+                <li>所有病人於<strong>移植後 3 個月</strong>建議補打 <strong>COVID-19 疫苗</strong>。</li>
+              </ul>
+            </li>
+            <li><strong>IVIG 補充</strong>：<strong>不常規預防性給予</strong>；僅於特定族群考慮（UCB 移植、B 細胞缺乏之兒童、cGVHD 併反覆鼻竇肺部感染）。</li>
+            <li><strong>高劑量類固醇與骨骼保護</strong>：監測血糖、血壓、腎上腺機能、肌病變與情緒；補充<strong>維生素 D 與鈣片</strong>，監測維生素 D 濃度，並安排 <strong>DEXA 骨密度檢查</strong>。</li>
+            <li><strong>定期癌症與器官篩檢</strong>：移植後 <strong>6–12 個月起</strong>定期接受<strong>皮膚科、牙科、眼科</strong>檢查（篩檢皮膚癌與口腔鱗狀細胞癌）。</li>
+            <li><strong>肝臟 GVHD</strong>：可考慮 <strong>Ursodiol</strong>（隨機試驗證實可降膽紅素、嚴重 aGVHD 並改善存活）。</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h4>🔥 急性 GVHD 專屬支持照護</h4>
+          <ul>
+            <li><strong>皮膚</strong>：避免陽光直射、使用防曬乳、避免光敏藥物（如 voriconazole）；嚴重皮膚病變會診皮膚科。</li>
+            <li><strong>腹痛止痛</strong>：嚴重腹痛<strong>謹慎使用鴉片類藥物</strong>（增加<strong>腸阻塞 ileus</strong> 風險）。</li>
+            <li><strong>止瀉 (Octreotide)</strong>：謹慎用於嚴重腹瀉；<strong>一旦腹瀉緩解或滿 7 天即須停藥</strong>（防腸阻塞）。</li>
+            <li><strong>口服局部類固醇</strong>：長期使用口服 beclomethasone（調劑製劑）或 budesonide 可能造成<strong>腎上腺機能不全</strong>，出現疲倦不適須提高警覺。</li>
+            <li><strong>營養與代謝</strong>：
+              <ul>
+                <li>警戒蛋白質流失性腸病與微量元素（鎂、鋅）及維生素（B1、B12、D）缺乏。</li>
+                <li>大量腹瀉或無法進食時考慮<strong>腸道休息 (bowel rest) 與全靜脈營養 (TPN)</strong>。</li>
+                <li>出現<strong>意識狀態改變</strong>時務必監測 <strong>Thiamine (維生素 B1)</strong> 缺乏！</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="box">
+          <h4>🩺 慢性 GVHD 專屬支持照護</h4>
+          <ul>
+            <li><strong>口腔</strong>：嚴重口乾考慮促唾液劑 (cevimeline)；可疑病灶必做牙科/口腔外科評估（<strong>排除口腔鱗狀細胞癌</strong>）；考慮 <strong>dexamethasone 或 CNI 漱口水</strong>（含漱後吐出）<span class="badge b-new">v1.2025</span>；監測念珠菌並予局部抗黴菌藥。</li>
+            <li><strong>眼睛</strong>：眼科評估；人工淚液、自體血清眼藥水、淚點栓 (punctal plugs) 或透氣鞏膜鏡；嚴重乾眼考慮膽鹼激導劑（cevimeline / pilocarpine）。</li>
+            <li><strong>腸胃道</strong>：食道狹窄會診腸胃科定期擴張；長期腹瀉評估吸收不良（胰臟萎縮者補充口服胰酵素）。</li>
+            <li><strong>生殖泌尿道</strong>：主動詢問排尿、勃起功能與陰道乾燥/疼痛症狀，適時轉介婦科、泌尿科或皮膚科（考量局部雌激素）。</li>
+            <li><strong>復健治療</strong>：肌肉骨骼、硬化性皮膚（關節受限）或神經肌肉病變轉介<strong>物理治療</strong>。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. WHO 5th APPENDIX & ABBREVIATIONS -->
+    <section class="card" id="who-appendix">
+      <div class="sec-header">
+        <h2>🌳 WHO 第 5 版血液腫瘤分類對照與縮寫</h2>
+        <div class="sec-tags"><span class="code-tag">WHO-HAEM5</span><span class="code-tag">ABBR-1</span><span class="code-tag">CAT-1</span></div>
+      </div>
+
+      <h3>一、一鍵直連 WHO 第 5 版血液腫瘤分類網頁（HSCT 相關疾病）</h3>
+      <div class="who-grid">
+        <a class="who-card" href="https://lichiahans.github.io/who5-hematolymphoid-guide/#ch2-aml" target="_blank" rel="noopener">
+          <div class="wc-title">🌳 Ch. 2 急性骨髓性白血病 (AML) ↗</div>
+          <div class="wc-sub">遺傳定義型 AML、APL (PML::RARA) 與分化型 AML — 異體移植首要適應症</div>
+        </a>
+        <a class="who-card" href="https://lichiahans.github.io/who5-hematolymphoid-guide/#ch2-mdn" target="_blank" rel="noopener">
+          <div class="wc-title">🌳 Ch. 2 骨髓增生異常腫瘤 (MDN/MDS) ↗</div>
+          <div class="wc-sub">5q / SF3B1 / 雙等位 TP53 與芽球分層 — 中高風險異體 HCT 根治適應症</div>
+        </a>
+        <a class="who-card" href="https://lichiahans.github.io/who5-hematolymphoid-guide/#ch2-mpn" target="_blank" rel="noopener">
+          <div class="wc-title">🌳 Ch. 2 骨髓增生性腫瘤 (CML / PMF / SM) ↗</div>
+          <div class="wc-sub">CML 芽球期/TKI 難治、原發骨髓纖維化與全身性肥大細胞增生症</div>
+        </a>
+        <a class="who-card" href="https://lichiahans.github.io/who5-hematolymphoid-guide/#ch2-sec-pct" target="_blank" rel="noopener">
+          <div class="wc-title">🌳 Ch. 2 細胞毒治療後骨髓腫瘤 (MN-pCT) ↗</div>
+          <div class="wc-sub">HSCT 調理化放療後之重要晚期併發症（原治療相關 MDS/AML）</div>
+        </a>
+        <a class="who-card" href="https://lichiahans.github.io/who5-hematolymphoid-guide/#ch4-pre" target="_blank" rel="noopener">
+          <div class="wc-title">🌳 Ch. 4/5 急性淋巴芽細胞白血病 (B/T-ALL) ↗</div>
+          <div class="wc-sub">前驅 B 細胞與前驅 T 細胞淋巴腫瘤 — 年輕體健者優先 TBI-based MA 異體移植</div>
+        </a>
+        <a class="who-card" href="https://lichiahans.github.io/who5-hematolymphoid-guide/#ch4-mature" target="_blank" rel="noopener">
+          <div class="wc-title">🌳 Ch. 4 成熟 B 細胞與何杰金氏淋巴瘤 ↗</div>
+          <div class="wc-sub">DLBCL、PCNSL、MCL、CLL/SLL、LPL/WM、HL — 自體與 RIC/NMA 異體適應症</div>
+        </a>
+        <a class="who-card" href="https://lichiahans.github.io/who5-hematolymphoid-guide/#ch4-pcm" target="_blank" rel="noopener">
+          <div class="wc-title">🌳 Ch. 4 漿細胞骨髓瘤 (MM) 與類澱粉沉積 ↗</div>
+          <div class="wc-sub">自體移植 (Mel200 / 減量 Mel) 最常見適應症</div>
+        </a>
+        <a class="who-card" href="https://lichiahans.github.io/who5-hematolymphoid-guide/#ch5-mature" target="_blank" rel="noopener">
+          <div class="wc-title">🌳 Ch. 5 成熟 T/NK 細胞與皮膚淋巴瘤 ↗</div>
+          <div class="wc-sub">PTCL、ALCL、ATLL、HSTCL、皮膚淋巴瘤 — 鞏固自體或 R/R 異體移植</div>
+        </a>
+        <a class="who-card" href="https://lichiahans.github.io/who5-hematolymphoid-guide/#ch7-fa" target="_blank" rel="noopener">
+          <div class="wc-title">🌳 Ch. 7 遺傳腫瘤症候群 (Fanconi Anemia) ↗</div>
+          <div class="wc-sub">臍帶血移植歷史首例根治疾病與遺傳易感骨髓衰竭症候群</div>
+        </a>
+      </div>
+
+      <h3>二、常用縮寫與 NCCN 證據分級 (ABBR-1 &amp; CAT-1)</h3>
+      <div class="grid-2">
+        <div class="box">
+          <h4>📖 關鍵縮寫對照 (ABBR-1)</h4>
+          <ul style="columns:2;column-gap:16px;font-size:13px;">
+            <li><strong>ABW</strong>：調整體重</li>
+            <li><strong>ATG</strong>：抗胸腺細胞球蛋白</li>
+            <li><strong>AUC</strong>：曲線下面積</li>
+            <li><strong>BOS</strong>：閉塞性細支氣管炎候群</li>
+            <li><strong>CNI</strong>：鈣調神經磷酸酶抑制劑</li>
+            <li><strong>COP</strong>：隱源性器質化肺炎</li>
+            <li><strong>DEXA</strong>：雙能量 X 光骨密度儀</li>
+            <li><strong>DLCO</strong>：一氧化碳肺瀰散量</li>
+            <li><strong>ECP</strong>：體外光分離術</li>
+            <li><strong>GVHD</strong>：移植物抗宿主病</li>
+            <li><strong>HCT-CI</strong>：移植共病指數</li>
+            <li><strong>KCS</strong>：乾燥性角結膜炎</li>
+            <li><strong>MA</strong>：骨髓清除性調理</li>
+            <li><strong>NMA</strong>：非骨髓清除性調理</li>
+            <li><strong>NRM</strong>：非復發死亡率</li>
+            <li><strong>P-ROM</strong>：攝影關節活動度評分</li>
+            <li><strong>PTCy</strong>：移植後環磷醯胺</li>
+            <li><strong>PUVA</strong>：補骨脂素併 UVA 光療</li>
+            <li><strong>RIC</strong>：減低強度調理</li>
+            <li><strong>STR</strong>：短串聯重複序列</li>
+            <li><strong>TBI</strong>：全身放射治療</li>
+            <li><strong>UCB</strong>：臍帶血</li>
+            <li><strong>uhCG/EGF</strong>：尿源絨毛膜促性腺激素/表皮生長因子</li>
+            <li><strong>VOD/SOS</strong>：靜脈閉塞/肝竇阻塞症候群</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h4>⚖️ NCCN 證據與共識分級 (CAT-1)</h4>
+          <ul style="font-size:13px;">
+            <li><strong>Category 1</strong>：高階實證（≥1 項隨機三期試驗或高品質統合分析），專家一致共識 (≥85%)。</li>
+            <li><strong>Category 2A</strong>：較低階實證，專家一致共識 (≥85%)。<em>（本指引除另有標註外皆為 2A）</em></li>
+            <li><strong>Category 2B</strong>：較低階實證，專家共識 (50%–84%)。</li>
+            <li><strong>Category 3</strong>：任何實證等級下，專家具重大分歧。</li>
+          </ul>
+          <h4 style="margin-top:12px;">🔗 移植相關外部工具</h4>
+          <ul style="font-size:13px;">
+            <li><a href="http://hctci.org" target="_blank" rel="noopener">HCT-CI 共病指數計算機 (hctci.org) ↗</a></li>
+            <li><a href="http://www.cibmtr.org/ReferenceCenter/Statistical/Tools/Pages/DRI.aspx" target="_blank" rel="noopener">CIBMTR Disease Risk Index (DRI) ↗</a></li>
+            <li><a href="http://www.cibmtr.org/ReferenceCenter/Statistical/Tools/Pages/VOD.aspx" target="_blank" rel="noopener">CIBMTR VOD/SOS 風險計算機 ↗</a></li>
+            <li><a href="https://z.umn.edu/MNAcuteGVHDRiskScore" target="_blank" rel="noopener">Minnesota Acute GVHD Risk Score ↗</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer-note">
+      整理來源：NCCN Clinical Practice Guidelines in Oncology — Hematopoietic Cell Transplantation (Version 1.2025, February 28, 2025)。<br>
+      本頁面僅供血液腫瘤與骨髓移植臨床學習與快速查閱參考，實際醫療決策請依據完整原始指引與病人個別狀況由專科醫師判斷。<br>
+      <a href="https://lichiahans.github.io/hematology-portal/" style="color:var(--primary);font-weight:600;text-decoration:none;">🏠 返回血液科臨床資源入口網</a>
+      &nbsp;·&nbsp;
+      <a href="https://lichiahans.github.io/who5-hematolymphoid-guide/" target="_blank" rel="noopener" style="color:var(--primary);font-weight:600;text-decoration:none;">🌳 前往 WHO 5th 血液腫瘤分類網頁</a>
+    </div>
+  </main>
+
+  <button id="topBtn" title="回到頂端">↑ 頂端</button>
+
+  <script>
+    // Theme toggle (Light / Dark)
+    const themeBtn = document.getElementById('themeBtn');
+    const htmlEl = document.documentElement;
+    function setTheme(theme) {
+      if (theme === 'dark') {
+        htmlEl.setAttribute('data-theme', 'dark');
+        themeBtn.textContent = '☀️ 淺色';
+      } else {
+        htmlEl.removeAttribute('data-theme');
+        themeBtn.textContent = '🌙 深色';
+      }
+      try { localStorage.setItem('hsct-guide-theme', theme); } catch (_) {}
+    }
+    const savedTheme = (() => { try { return localStorage.getItem('hsct-guide-theme'); } catch (_) { return null; } })();
+    if (savedTheme) setTheme(savedTheme);
+    else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) setTheme('dark');
+    themeBtn.addEventListener('click', () => setTheme(htmlEl.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'));
+
+    // Mobile sidebar
+    const menuBtn = document.getElementById('menuBtn');
+    const sidebar = document.getElementById('sidebar');
+    menuBtn.addEventListener('click', () => sidebar.classList.toggle('open'));
+    document.querySelectorAll('.nav-link').forEach(a => a.addEventListener('click', () => sidebar.classList.remove('open')));
+
+    // Tabs
+    document.querySelectorAll('.tabs').forEach(tabBar => {
+      const btns = tabBar.querySelectorAll('.tab-btn');
+      btns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const targetId = btn.dataset.tab;
+          btns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          btns.forEach(b => {
+            const p = document.getElementById(b.dataset.tab);
+            if (p) p.classList.toggle('active', b.dataset.tab === targetId);
+          });
+        });
+      });
+    });
+
+    // 1. Adjusted Body Weight Calculator (HCT-A 7/10)
+    function updateAbw() {
+      const tbw = parseFloat(document.getElementById('abwActual').value) || 0;
+      const ibw = parseFloat(document.getElementById('abwIdeal').value) || 0;
+      const out = document.getElementById('abwResult');
+      if (tbw <= 0 || ibw <= 0) {
+        out.innerHTML = '請輸入有效體重數值。';
+        return;
+      }
+      const ratio = (tbw / ibw) * 100;
+      const abw25 = ibw + 0.25 * (tbw - ibw);
+      const abw40 = ibw + 0.40 * (tbw - ibw);
+      const over120 = ratio > 120;
+      out.className = over120 ? 'callout warn' : 'callout ok';
+      out.innerHTML = `<strong>體重比 (TBW / IBW) = ${ratio.toFixed(1)}%</strong>${over120 ? '（&gt;120% IBW，啟動肥胖調整規則）' : '（≤120% IBW）'}<br>
+        • <strong>25% 調整體重 (ABW25)</strong> = <strong>${abw25.toFixed(1)} kg</strong>（適用：Busulfan mg/kg、Etoposide mg/kg、&gt;120% IBW 之 Carmustine 與 Cy120）<br>
+        • <strong>40% 調整體重 (ABW40)</strong> = <strong>${abw40.toFixed(1)} kg</strong>（適用：&gt;120% IBW 之 Thiotepa BSA 計算）<br>
+        • <strong>Cy200 基準體重</strong> = <strong>${Math.min(tbw, ibw).toFixed(1)} kg</strong>（取 TBW 與 IBW 較小者）；<strong>Treosulfan / Flu / Mel / Ara-C</strong> 均依總體重 ${tbw.toFixed(1)} kg 計算 BSA。`;
+    }
+    ['abwActual', 'abwIdeal'].forEach(id => document.getElementById(id).addEventListener('input', updateAbw));
+    updateAbw();
+
+    // 2. Acute GVHD MAGIC Grading Calculator
+    function updateAgvhd() {
+      const skin = +document.getElementById('agSkin').value;
+      const liver = +document.getElementById('agLiver').value;
+      const ugi = +document.getElementById('agUgi').value;
+      const lgi = +document.getElementById('agLgi').value;
+      const out = document.getElementById('agvhdResult');
+
+      let grade = 'Grade 0';
+      let cls = 'callout ok';
+      let rec = '無急性 GVHD 活動性器官侵犯，維持常規追蹤。';
+
+      if (skin === 4 || liver === 4 || lgi === 4) {
+        grade = 'Grade IV（極重度急性 GVHD）';
+        cls = 'callout danger';
+        rec = '維持／重啟原免疫抑制劑 ＋ <strong>Methylprednisolone 1–2 mg/kg/day</strong>（上限 2 mg/kg/day）± 局部類固醇；強烈建議考慮臨床試驗，3–5 天惡化或 5–7 天無改善即啟動 Ruxolitinib (Cat 1)。';
+      } else if (liver >= 2 || lgi >= 2) {
+        grade = 'Grade III（重度急性 GVHD）';
+        cls = 'callout danger';
+        rec = '維持／重啟原免疫抑制劑 ＋ <strong>Methylprednisolone 1–2 mg/kg/day</strong> ± 局部類固醇；加強感染預防與腸道支持照護，密切追蹤 3–7 天類固醇反應。';
+      } else if (skin === 3 || liver === 1 || ugi === 1 || lgi === 1) {
+        grade = 'Grade II（中度急性 GVHD）';
+        cls = 'callout warn';
+        if (ugi === 1 && skin <= 2 && liver === 0 && lgi === 0) {
+          rec = '<strong>僅上消化道 (± 輕度皮膚)</strong>：可採 <strong>Methylprednisolone 0.5–1 mg/kg/day + 口服腸道局部類固醇 (beclomethasone ± budesonide)</strong>；標準風險者亦可考慮單用 Sirolimus。';
+        } else {
+          rec = '維持／重啟原免疫抑制劑 ＋ <strong>Methylprednisolone 1–2 mg/kg/day</strong>（Grade II 可考慮 1 mg/kg/day）± 局部類固醇；標準風險者可考慮 Sirolimus。';
+        }
+      } else if (skin >= 1) {
+        grade = 'Grade I（輕度急性 GVHD）';
+        cls = 'callout info';
+        rec = '維持／重啟原免疫抑制劑 ＋ <strong>中高效價局部類固醇</strong>（臉部/皺褶改低效價 hydrocortisone）± 局部 tacrolimus ± 抗組織胺；無症狀且穩定亦可觀察。';
+      }
+      out.className = cls;
+      out.innerHTML = `<strong>MAGIC 整體分級：${grade}</strong><br>• <strong>一線建議：</strong>${rec}`;
+    }
+    ['agSkin', 'agLiver', 'agUgi', 'agLgi'].forEach(id => document.getElementById(id).addEventListener('change', updateAgvhd));
+    updateAgvhd();
+
+    // 3. Chronic GVHD NIH Global Severity Calculator
+    function updateCgvhd() {
+      const scores = ['cgSkin','cgMouth','cgEyes','cgGi','cgLiver','cgJoint','cgGenital'].map(id => +document.getElementById(id).value);
+      const lung = +document.getElementById('cgLung').value;
+      const allScores = [...scores, lung];
+      const involved = allScores.filter(s => s > 0).length;
+      const maxNonLung = Math.max(...scores);
+      const out = document.getElementById('cgvhdResult');
+
+      let sev = '無慢性 GVHD (No cGVHD)';
+      let cls = 'callout ok';
+      let rec = '無器官侵犯，持續常規移植後追蹤。';
+
+      if (maxNonLung === 3 || lung >= 2) {
+        sev = '重度慢性 GVHD (Severe cGVHD)';
+        cls = 'callout danger';
+        rec = '啟動系統性治療：<strong>Methylprednisolone 0.5–1 mg/kg/day</strong> 或 <strong>Sirolimus + prednisone</strong> ± 局部治療' + (lung > 0 ? ' ＋ <strong>肺部 FAM 三合一（吸入性類固醇 + Azithromycin + Montelukast）</strong>' : '') + '；跨專科團隊介入。';
+      } else if (involved >= 3 || maxNonLung === 2 || lung === 1) {
+        sev = '中度慢性 GVHD (Moderate cGVHD)';
+        cls = 'callout warn';
+        rec = '建議系統性治療：<strong>Methylprednisolone 0.5–1 mg/kg/day</strong> 或 <strong>Sirolimus + prednisone</strong> ± 局部治療' + (lung > 0 ? ' ＋ <strong>肺部 FAM 三合一</strong>' : '') + '，並追蹤 NIH 器官反應標準。';
+      } else if (involved >= 1) {
+        sev = '輕度慢性 GVHD (Mild cGVHD)';
+        cls = 'callout info';
+        rec = '通常以<strong>局部治療</strong>（局部類固醇、dexamethasone/CNI 漱口水、人工淚液、局部雌激素）或維持／緩減原免疫抑制劑為主；僅在具高風險特徵（如血小板 &lt;100,000）時考慮系統性治療。';
+      }
+      out.className = cls;
+      out.innerHTML = `<strong>NIH 整體嚴重度：${sev}</strong>（侵犯器官數：${involved}；肺部分數：${lung}）<br>• <strong>處置建議：</strong>${rec}`;
+    }
+    ['cgSkin','cgMouth','cgEyes','cgGi','cgLiver','cgLung','cgJoint','cgGenital']
+      .forEach(id => document.getElementById(id).addEventListener('change', updateCgvhd));
+    updateCgvhd();
+
+    // Active Nav Highlight & Back to Top
+    const sections = document.querySelectorAll('section.card');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const topBtn = document.getElementById('topBtn');
+    window.addEventListener('scroll', () => {
+      topBtn.style.display = window.scrollY > 400 ? 'block' : 'none';
+      let current = '';
+      sections.forEach(sec => {
+        if (window.scrollY >= sec.offsetTop - 110) current = sec.id;
+      });
+      navLinks.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+      });
+    });
+    topBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // Instant Full-Text Search & Highlight
+    const searchInput = document.getElementById('searchInput');
+    const searchClear = document.getElementById('searchClear');
+    const searchCount = document.getElementById('searchCount');
+    const contentRoot = document.getElementById('contentRoot');
+
+    function clearHighlights() {
+      contentRoot.querySelectorAll('mark.hl').forEach(m => {
+        const parent = m.parentNode;
+        parent.replaceChild(document.createTextNode(m.textContent), m);
+        parent.normalize();
+      });
+    }
+
+    function performSearch() {
+      const q = searchInput.value.trim();
+      clearHighlights();
+      searchClear.style.display = q ? 'block' : 'none';
+      if (!q) {
+        sections.forEach(s => s.style.display = '');
+        searchCount.textContent = '';
+        return;
+      }
+      const regex = new RegExp(q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi');
+      let totalMatches = 0;
+      let firstMark = null;
+
+      sections.forEach(sec => {
+        sec.querySelectorAll('.tab-panel').forEach(p => p.classList.add('active'));
+        let secMatches = 0;
+        const walker = document.createTreeWalker(sec, NodeFilter.SHOW_TEXT, {
+          acceptNode: node => {
+            if (!node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+            const tag = node.parentNode.tagName;
+            if (tag === 'SCRIPT' || tag === 'STYLE' || tag === 'OPTION') return NodeFilter.FILTER_REJECT;
+            return regex.test(node.nodeValue) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+          }
+        });
+        const nodes = [];
+        let n;
+        while ((n = walker.nextNode())) nodes.push(n);
+        nodes.forEach(textNode => {
+          const frag = document.createDocumentFragment();
+          let lastIdx = 0;
+          const str = textNode.nodeValue;
+          regex.lastIndex = 0;
+          let m;
+          while ((m = regex.exec(str)) !== null) {
+            if (m.index > lastIdx) frag.appendChild(document.createTextNode(str.slice(lastIdx, m.index)));
+            const mark = document.createElement('mark');
+            mark.className = 'hl';
+            mark.textContent = m[0];
+            frag.appendChild(mark);
+            if (!firstMark) firstMark = mark;
+            secMatches++;
+            totalMatches++;
+            lastIdx = m.index + m[0].length;
+          }
+          if (lastIdx < str.length) frag.appendChild(document.createTextNode(str.slice(lastIdx)));
+          textNode.parentNode.replaceChild(frag, textNode);
+        });
+        sec.style.display = secMatches > 0 ? '' : 'none';
+      });
+
+      searchCount.textContent = totalMatches > 0 ? `${totalMatches} 筆符合` : '無符合結果';
+      if (firstMark) firstMark.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    let debounce;
+    searchInput.addEventListener('input', () => {
+      clearTimeout(debounce);
+      debounce = setTimeout(performSearch, 200);
+    });
+    searchClear.addEventListener('click', () => {
+      searchInput.value = '';
+      performSearch();
+      searchInput.focus();
+    });
+    document.addEventListener('keydown', e => {
+      if (e.key === '/' && document.activeElement !== searchInput) {
+        e.preventDefault();
+        searchInput.focus();
+      }
+    });
+  </script>
+</body>
+</html>
